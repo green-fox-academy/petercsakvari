@@ -1,0 +1,70 @@
+body {
+    width: auto;
+    margin: 0 auto;
+    font-family: 'consolas', courier;
+    background-image: url(background.png)
+}
+
+#navigation {
+    background-color: #333333;
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.imgcol {
+    width: 50%;
+    float: left;
+}
+
+.menucol {
+    width: 50%;
+    float: right;
+    text-align: right;
+    padding-top: 5px;
+}
+
+a {
+    padding-right: 10px;
+    text-decoration: none;
+    color: #ff0099;
+    text-align: right;
+}
+
+h1, h2, h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+main {
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 0 auto;
+}
+
+p{
+    line-height: normal;
+}
+
+#home h2 {
+    color: #ff0099;
+}
+
+.divider h1 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: lighter;
+    color: grey;
+}
+
+#wiki h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.wikidef {
+    padding-bottom: 10px;
+}

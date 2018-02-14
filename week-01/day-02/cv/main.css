@@ -1,0 +1,9 @@
+body {
+    width: auto;
+    margin: 0 auto;
+}
+
+nav {
+    background-image: url(header.png);
+    text-align: center;
+}
