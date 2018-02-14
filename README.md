@@ -1,7 +1,7 @@
-[I'm an inline-style link with title](https://github.com/csakii01/first-task "First Task")
+[First Task](https://github.com/csakii01/first-task "First Task")
 
 
-[I'm an inline-style link with title](https://github.com/csakii01/git-lesson-repository "Repository Lesson")
+[Repository Lesson](https://github.com/csakii01/git-lesson-repository "Repository Lesson")
 
 
-[I'm an inline-style link with title](https://github.com/csakii01/patchwork "Patchwork")
+[Patchwork](https://github.com/csakii01/patchwork "Patchwork")
