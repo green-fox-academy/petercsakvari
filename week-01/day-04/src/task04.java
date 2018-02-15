@@ -87,7 +87,7 @@ public class task04 {
         String k = "Apple";
         //fill the k variable with its content 4 times
         for (int i = 0; i < 4; i++ ){
-
+            k += k;
         }
 
 
