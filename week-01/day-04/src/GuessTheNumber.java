@@ -17,7 +17,7 @@ public class GuessTheNumber {
                 guess = scanner.nextInt();
                 checkGuess(guess, number);
             }
-            System.out.println("Thanks for playing!");
+            System.out.println("No?\nReally?\nWell...\nFormatting C:");
         }
     }
 
