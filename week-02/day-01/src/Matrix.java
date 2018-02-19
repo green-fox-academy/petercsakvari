@@ -1,6 +1,6 @@
 public class Matrix {
     public static void main(String[] args) {
-        int[][] multiArray = new int[9][9];
+        int[][] multiArray = new int[4][4];
         display(multiArray);
     }
 
