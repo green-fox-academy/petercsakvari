@@ -14,12 +14,12 @@ public class Anagram {
         System.out.println(isAnagram(input1, input2));
     }
     public static boolean isAnagram (String in1, String in2){
-        char[] word1 = in1.toCharArray();
-        char[] word2 = in2.toCharArray();
         if (in1.length() == in2.length()){
+            char[] word1 = in1.toCharArray();
+            char[] word2 = in2.toCharArray();
             Arrays.sort(word1);
             Arrays.sort(word2);
+            return Arrays.equals(word1, word2);
         } else return false;
-        return Arrays.equals(word1, word2);
     }
 }
