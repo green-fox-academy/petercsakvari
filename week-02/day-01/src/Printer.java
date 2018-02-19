@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Printer {
     //  Create the usual class wrapper
     //  and main method on your own.
@@ -12,6 +14,10 @@ public class Printer {
     // printer("first", "second", "third", "fourh")
     // ...
     public static void main(String[] args){
-
+        String [] words = {"first", "second"};
+        printer(words);
     }
+    public static void printer (String[] input){
+        System.out.println("printer" + Arrays.toString(input));
+        }
 }
