@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Printer {
     //  Create the usual class wrapper
@@ -14,10 +15,12 @@ public class Printer {
     // printer("first", "second", "third", "fourh")
     // ...
     public static void main(String[] args){
-        String [] words = {"first", "second"};
-        printer(words);
+        System.out.println("Write words: ");
+        printer();
     }
-    public static void printer (String[] input){
-        System.out.println("printer" + Arrays.toString(input));
+    public static void printer (){
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        System.out.println("printer (" + input + ")");
         }
 }

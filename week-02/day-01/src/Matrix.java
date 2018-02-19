@@ -4,7 +4,7 @@ public class Matrix {
         display(multiArray);
     }
 
-    public static void display(int arr[][]) {
+    public static void display(int[][] arr) {
         for (int row = 0; row < arr.length; row++) {
             for (int column = 0; column < arr[row].length; column++) {
                 System.out.print(arr[row][column] + " ");
@@ -13,3 +13,4 @@ public class Matrix {
         }
     }
 }
+
