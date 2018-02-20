@@ -8,7 +8,7 @@ public class Unique {
     //System.out.println(unique(new int[] {1, 11, 34, 11, 52, 61, 1, 34}));
     //  should print: `[1, 11, 34, 52, 61]`
     public static void main(String[] args) {
-        int[] parameter = {1, 11, 34, 11, 52, 61, 1, 34};
+        int[] parameter = {1, 11, 34, 1, 52, 61, 1, 34};
         System.out.println(Arrays.toString(unique(parameter)));
 
     }
