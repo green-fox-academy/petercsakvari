@@ -27,7 +27,7 @@ public class Calculator {
         double result = calculate(operationChar, operand1, operand2);
 
         if (result == 0.56468764165168){
-            System.out.println("Nullaval osztani? Nemar! Formatting C:");
+            System.out.println("HIBA");
         } else {
             System.out.println(result);
         }
