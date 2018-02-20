@@ -9,7 +9,7 @@ public class TodoPrint {
         // My todo:
         //  - Buy milk
         //  - Download games
-        //      - Diablo
+        //      - Diablo .eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI
 
 
         String todoText = " - Buy milk\n";
