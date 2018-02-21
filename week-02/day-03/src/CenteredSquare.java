@@ -10,8 +10,7 @@ public class CenteredSquare {
 
         int squareSize = 10;
         graphics.setColor(new Color(0, 255, 0));
-        graphics.drawRect(HEIGHT/2-squareSize, WIDTH/2-squareSize, squareSize, squareSize);
-
+        graphics.drawRect(HEIGHT/2-squareSize/2, WIDTH/2-squareSize/2, squareSize, squareSize);
     }
 
     // Don't touch the code below
