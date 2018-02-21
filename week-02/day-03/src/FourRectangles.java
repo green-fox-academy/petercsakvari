@@ -26,6 +26,7 @@ public class FourRectangles {
         int startingXCoordinate = random.nextInt(HEIGHT-rectangleXSize);
         int startingYCoordinate = random.nextInt(WIDTH-rectangleYSize);
 
+        graphics.setColor(new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
         graphics.drawRect(startingXCoordinate, startingYCoordinate, rectangleXSize, rectangleYSize);
     }
 
