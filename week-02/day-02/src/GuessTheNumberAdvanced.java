@@ -8,26 +8,26 @@ public class GuessTheNumberAdvanced {
     static int LIVES = 10;
 
     public static void main(String[] args) {
-        String difficulty = gameStart();
-        int numberToGuess = setDifficulty(difficulty);
-        int guessedNum = guessing();
+        String difficulty = gameStart();               // Starts the game, asks for the difficulty.
+        int numberToGuess = setDifficulty(difficulty); // Considering the difficulty it generates the random number.
+        int bound = randNumBound(difficulty);
+        int guessedNum = guessing(bound);              // Asks for the guess.
+        errorCheck(guessedNum, bound);
         checkGuess(guessedNum, numberToGuess);
     }
 
-    private static void checkGuess(int guess, int numberToGuess) {
-        if (guess == numberToGuess){
-            System.out.println("Congratulations. You won!");
-        } else if (guess > numberToGuess) {
-            System.out.println("Too high!" + "Lives left: " + LIVES--);
-        } else if (guess < numberToGuess){
-            System.out.println("Too low!" + "Lives left: " + LIVES--);
-        }
+    private static int randNumBound(String difficulty) {
+        int range = 0;
+        if (difficulty.toLowerCase().equals("easy")) {
+            range = 50;
+        } else if (difficulty.toLowerCase().equals("medium")) {
+            range = 250;
+        } else if (difficulty.toLowerCase().equals("hard")) {
+            range = 1000;
+        } /*else if (difficulty.toLowerCase().equals("impossible")) {
 
-    }
-
-    private static int guessing() {
-        System.out.println("Awesome! \n You have 10 lives! \n Now start guessing:");
-        return scanner.nextInt();
+        }*/
+        return range;
     }
 
     private static String gameStart() {
@@ -48,5 +48,25 @@ public class GuessTheNumberAdvanced {
             numberToGuess = random.nextInt() + 1;
         }
         return numberToGuess;
+    }
+
+    private static int guessing(int bound) {
+        System.out.println("Awesome! \n You have 10 lives! \n \n Guess in the range of: 1 - " + bound + "Now start guessing:");
+        return scanner.nextInt();
+    }
+
+    private static void errorCheck(int guessedNum, int bound) {
+        if ()
+    }
+
+    private static void checkGuess(int guess, int numberToGuess) {
+        if (guess == numberToGuess){
+            System.out.println("Congratulations. You won!");
+        } else if (guess > numberToGuess) {
+            System.out.println("Too high!" + "Lives left: " + LIVES--);
+        } else if (guess < numberToGuess){
+            System.out.println("Too low!" + "Lives left: " + LIVES--);
+        }
+
     }
 }
