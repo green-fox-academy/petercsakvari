@@ -5,7 +5,7 @@ public class GuessTheNumberAdvanced {
 
     private static Random random = new Random();
     private static Scanner scanner = new Scanner(System.in);
-    private static int lives = 20;
+    private static int lives = 10;
     private static boolean fullRestart = true;
     private static boolean mainGameStop = true;
 
@@ -36,15 +36,13 @@ public class GuessTheNumberAdvanced {
             range = 250;
         } else if (difficulty.toLowerCase().equals("hard")) {
             range = 1000;
-        } /*else if (difficulty.toLowerCase().equals("impossible")) {
-
-        }*/
+        }
         return range;
     }
 
     private static String gameStart() {
         System.out.println("WELCOME TO THE GUESSING GAME!");
-        System.out.println("Please choose the difficulty of the game by writing it:\nEasy \t Medium \t Hard \t Impossible");
+        System.out.println("Please choose the difficulty of the game by writing it:\nEasy\tMedium\t Hard\tImpossible");
         return scanner.nextLine();
     }
 
