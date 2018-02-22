@@ -12,8 +12,7 @@ public class GuessTheNumberAdvanced {
         int numberToGuess = setDifficulty(difficulty); // Considering the difficulty it generates the random number.
         int bound = randNumBound(difficulty);
         int guessedNum = guessing(bound);              // Asks for the guess.
-        errorCheck(guessedNum, bound);
-        checkGuess(guessedNum, numberToGuess);
+        checkGuess(guessedNum, numberToGuess, bound);
     }
 
     private static int randNumBound(String difficulty) {
@@ -51,22 +50,24 @@ public class GuessTheNumberAdvanced {
     }
 
     private static int guessing(int bound) {
-        System.out.println("Awesome! \n You have 10 lives! \n \n Guess in the range of: 1 - " + bound + "Now start guessing:");
+        System.out.println("Your range of numbers: 1 - " + bound + "\nYou have 10 lives!\tNow start guessing:");
         return scanner.nextInt();
     }
 
-    private static void errorCheck(int guessedNum, int bound) {
+    private static boolean errorCheck(int guessedNum, int bound) {
         if (guessedNum > bound || guessedNum < 1){
-            System.out.println("The number you guessed is out of bound! \n Guess again!");
+            System.out.println("The number you guessed is out of bound!\nGuess again:");
+            return false;
         }
+        return true;
     }
 
-    private static void checkGuess(int guess, int numberToGuess) {
-        if (guess == numberToGuess){
+    private static void checkGuess(int guessedNum, int numberToGuess, int bound) {
+        if (guessedNum == numberToGuess){
             System.out.println("Congratulations. You won!");
-        } else if (guess > numberToGuess) {
+        } else if (guessedNum > numberToGuess && errorCheck(guessedNum, bound)) {
             System.out.println("Too high!" + "Lives left: " + lives--);
-        } else if (guess < numberToGuess){
+        } else if (guessedNum < numberToGuess && errorCheck(guessedNum, bound)){
             System.out.println("Too low!" + "Lives left: " + lives--);
         }
 
