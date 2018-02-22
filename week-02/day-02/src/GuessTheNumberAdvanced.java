@@ -5,7 +5,7 @@ public class GuessTheNumberAdvanced {
 
     private static Random random = new Random();
     private static Scanner scanner = new Scanner(System.in);
-    private static int lives = 2;
+    private static int lives = 20;
     private static boolean fullRestart = true;
     private static boolean mainGameStop = true;
 
@@ -44,7 +44,7 @@ public class GuessTheNumberAdvanced {
 
     private static String gameStart() {
         System.out.println("WELCOME TO THE GUESSING GAME!");
-        System.out.println("Please choose the difficulty of the game by writing it: Easy \t Medium \t Hard \t Impossible");
+        System.out.println("Please choose the difficulty of the game by writing it:\nEasy \t Medium \t Hard \t Impossible");
         return scanner.nextLine();
     }
 
@@ -77,8 +77,9 @@ public class GuessTheNumberAdvanced {
     private static void checkGuess(int guessedNum, int numberToGuess, int bound) {
         if (guessedNum == numberToGuess) {
             System.out.println("Congratulations. You won!");
-            mainGameStop = false;
-            fullRestart = false;
+            System.out.println("Do you want to try again? (y or n)");
+            String retryCheck = scanner.next();
+            checkIfRetry(retryCheck);
         } else if (guessedNum > numberToGuess && errorCheck(guessedNum, bound)) {
             System.out.println("Too high!" + "\tLives left: " + --lives);
             fullRestart = isDead();
