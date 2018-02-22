@@ -5,25 +5,26 @@ public class GuessTheNumberAdvanced {
 
     private static Random random = new Random();
     private static Scanner scanner = new Scanner(System.in);
-    private static int lives = 10;
+    private static int lives = 2;
     private static boolean fullRestart = true;
     private static boolean mainGameStop = true;
 
     public static void main(String[] args) {
-        while (fullRestart){
+        while (fullRestart) {
             String difficulty = gameStart();                    // Starts the game, asks for the difficulty.
             int numberToGuess = setDifficulty(difficulty);      // Considering the difficulty it generates the random number.
             int bound = randNumBound(difficulty);
             System.out.println("Your range of numbers: 1 - " + bound);
             System.out.println("You have 10 lives!\tGuess:");
-            while(mainGameStop){
+            mainGameStop = true;
+            while (mainGameStop) {
                 mainGame(numberToGuess, bound);
             }
         }
     }
 
     private static void mainGame(int numberToGuess, int bound) {
-        int guessedNum = guessing();                             // Asks for the guess.
+        int guessedNum = guessing();
         checkGuess(guessedNum, numberToGuess, bound);
     }
 
@@ -66,7 +67,7 @@ public class GuessTheNumberAdvanced {
     }
 
     private static boolean errorCheck(int guessedNum, int bound) {
-        if (guessedNum > bound || guessedNum < 1){
+        if (guessedNum > bound || guessedNum < 1) {
             System.out.println("The number you guessed is out of bound!\nGuess again:");
             return false;
         }
@@ -74,28 +75,36 @@ public class GuessTheNumberAdvanced {
     }
 
     private static void checkGuess(int guessedNum, int numberToGuess, int bound) {
-        if (guessedNum == numberToGuess){
+        if (guessedNum == numberToGuess) {
             System.out.println("Congratulations. You won!");
+            mainGameStop = false;
             fullRestart = false;
         } else if (guessedNum > numberToGuess && errorCheck(guessedNum, bound)) {
             System.out.println("Too high!" + "\tLives left: " + --lives);
             fullRestart = isDead();
             System.out.println("Guess again:");
-        } else if (guessedNum < numberToGuess && errorCheck(guessedNum, bound)){
+        } else if (guessedNum < numberToGuess && errorCheck(guessedNum, bound)) {
             System.out.println("Too low!" + "\tLives left: " + --lives);
             fullRestart = isDead();
             System.out.println("Guess again:");
         }
-
     }
 
     private static boolean isDead() {
-        if (lives == 0){
+        String retryCheck = "";
+        if (lives == 0) {
             System.out.println("YOU DIED!\nDo you want to try again? (y or n)");
-            String retryCheck = scanner.next();
-            if (retryCheck.toLowerCase().equals("n")){
-                fullRestart = false;
-            }
+            retryCheck = scanner.next();
+        }
+        return checkIfRetry(retryCheck);
+    }
+
+    private static boolean checkIfRetry(String retryCheck) {
+        scanner.nextLine();
+        if (retryCheck.toLowerCase().equals("n")) {
+            System.exit(0);
+        } else if (retryCheck.toLowerCase().equals("y")) {
+            mainGameStop = false;
         }
         return fullRestart;
     }
