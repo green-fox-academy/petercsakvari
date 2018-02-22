@@ -7,8 +7,10 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Triangles {
 
     public static void mainDraw(Graphics graphics) {
-
-        graphics.drawPolygon();
+        // Main Triangle
+        graphics.drawLine(WIDTH/2, 10, WIDTH/2-140, 250);
+        graphics.drawLine(WIDTH/2, 10, WIDTH/2+140, 250);
+        graphics.drawLine(WIDTH/2-140, 250, WIDTH/2+140, 250);
 
     }
 
