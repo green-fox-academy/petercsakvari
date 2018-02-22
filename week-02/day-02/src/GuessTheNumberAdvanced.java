@@ -3,15 +3,27 @@ import java.util.Scanner;
 
 public class GuessTheNumberAdvanced {
 
-    static Random random = new Random();
-    static Scanner scanner = new Scanner(System.in);
-    static int lives = 10;
+    private static Random random = new Random();
+    private static Scanner scanner = new Scanner(System.in);
+    private static int lives = 10;
+    private static boolean fullRestart = true;
+    private static boolean mainGameStop = true;
 
     public static void main(String[] args) {
-        String difficulty = gameStart();               // Starts the game, asks for the difficulty.
-        int numberToGuess = setDifficulty(difficulty); // Considering the difficulty it generates the random number.
-        int bound = randNumBound(difficulty);
-        int guessedNum = guessing(bound);              // Asks for the guess.
+        while (fullRestart){
+            String difficulty = gameStart();                    // Starts the game, asks for the difficulty.
+            int numberToGuess = setDifficulty(difficulty);      // Considering the difficulty it generates the random number.
+            int bound = randNumBound(difficulty);
+            System.out.println("Your range of numbers: 1 - " + bound);
+            System.out.println("You have 10 lives!\tGuess:");
+            while(mainGameStop){
+                mainGame(numberToGuess, bound);
+            }
+        }
+    }
+
+    private static void mainGame(int numberToGuess, int bound) {
+        int guessedNum = guessing();                             // Asks for the guess.
         checkGuess(guessedNum, numberToGuess, bound);
     }
 
@@ -49,8 +61,7 @@ public class GuessTheNumberAdvanced {
         return numberToGuess;
     }
 
-    private static int guessing(int bound) {
-        System.out.println("Your range of numbers: 1 - " + bound + "\nYou have 10 lives!\tNow start guessing:");
+    private static int guessing() {
         return scanner.nextInt();
     }
 
@@ -65,11 +76,27 @@ public class GuessTheNumberAdvanced {
     private static void checkGuess(int guessedNum, int numberToGuess, int bound) {
         if (guessedNum == numberToGuess){
             System.out.println("Congratulations. You won!");
+            fullRestart = false;
         } else if (guessedNum > numberToGuess && errorCheck(guessedNum, bound)) {
-            System.out.println("Too high!" + "Lives left: " + lives--);
+            System.out.println("Too high!" + "\tLives left: " + --lives);
+            fullRestart = isDead();
+            System.out.println("Guess again:");
         } else if (guessedNum < numberToGuess && errorCheck(guessedNum, bound)){
-            System.out.println("Too low!" + "Lives left: " + lives--);
+            System.out.println("Too low!" + "\tLives left: " + --lives);
+            fullRestart = isDead();
+            System.out.println("Guess again:");
         }
 
+    }
+
+    private static boolean isDead() {
+        if (lives == 0){
+            System.out.println("YOU DIED!\nDo you want to try again? (y or n)");
+            String retryCheck = scanner.next();
+            if (retryCheck.toLowerCase().equals("n")){
+                fullRestart = false;
+            }
+        }
+        return fullRestart;
     }
 }
