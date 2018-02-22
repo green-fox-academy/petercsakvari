@@ -41,8 +41,9 @@ public class GuessTheNumberAdvanced {
     }
 
     private static String gameStart() {
-        System.out.println("WELCOME TO THE GUESSING GAME!");
-        System.out.println("Please choose the difficulty of the game by writing it:\nEasy\tMedium\t Hard\tImpossible");
+        System.out.println("###########| WELCOME TO THE GUESSING GAME! |###########");
+        System.out.println("Please choose the difficulty of the game by writing it!\n#########| Easy | Medium | " +
+                "Hard | Impossible |#########");
         return scanner.nextLine();
     }
 
@@ -74,7 +75,7 @@ public class GuessTheNumberAdvanced {
 
     private static void checkGuess(int guessedNum, int numberToGuess, int bound) {
         if (guessedNum == numberToGuess) {
-            System.out.println("Congratulations. You won!");
+            System.out.println("Congratulations! You won!");
             System.out.println("Do you want to try again? (y or n)");
             String retryCheck = scanner.next();
             checkIfRetry(retryCheck);
