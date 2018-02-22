@@ -19,17 +19,15 @@ public class Triangles {
     }
 
     private static void drawFull(Graphics graphics, int x, int y) {
-        int counter = 1;
-        for (int i = 0; i < 10; i++) {
-            drawTriangle(graphics, counter, x, y);
-        }
-    }
-
-    private static void drawTriangle(Graphics graphics, int counter, int x, int y) {
-        for (counter = 1; counter < 15; counter++) {
-            int xFirstPoints[] = {x - (i*goDown), x - ((i + 1) * goSideways), x + ((i + 1) * goSideways)};
-            int yFirstPoints[] = {y + (i*goDown), y + ((i + 1) * goDown), y + ((i + 1) * goDown)};
-            graphics.drawPolygon(xFirstPoints, yFirstPoints, nPoints);
+        int xFirstPoints[] = {x, x - goSideways, x + goSideways};
+        int yFirstPoints[] = {y, y + goDown, y + goDown};
+        graphics.drawPolygon(xFirstPoints, yFirstPoints, nPoints);
+        for (int i = 1; i < 10; i++) {
+            for (int j = 1; j < 10; j++) {
+                int xPoints[] = {x - (i * goSideways), x - (i * goSideways), x + (i * goSideways)};
+                int yPoints[] = {y + (i * goDown), y + (i * goDown), y + (i * goDown)};
+                graphics.drawPolygon(xPoints, yPoints, nPoints);
+            }
         }
     }
 
