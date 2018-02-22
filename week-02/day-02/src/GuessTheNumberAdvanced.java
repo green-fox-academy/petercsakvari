@@ -5,7 +5,7 @@ public class GuessTheNumberAdvanced {
 
     static Random random = new Random();
     static Scanner scanner = new Scanner(System.in);
-    static int LIVES = 10;
+    static int lives = 10;
 
     public static void main(String[] args) {
         String difficulty = gameStart();               // Starts the game, asks for the difficulty.
@@ -56,16 +56,18 @@ public class GuessTheNumberAdvanced {
     }
 
     private static void errorCheck(int guessedNum, int bound) {
-        if ()
+        if (guessedNum > bound || guessedNum < 1){
+            System.out.println("The number you guessed is out of bound! \n Guess again!");
+        }
     }
 
     private static void checkGuess(int guess, int numberToGuess) {
         if (guess == numberToGuess){
             System.out.println("Congratulations. You won!");
         } else if (guess > numberToGuess) {
-            System.out.println("Too high!" + "Lives left: " + LIVES--);
+            System.out.println("Too high!" + "Lives left: " + lives--);
         } else if (guess < numberToGuess){
-            System.out.println("Too low!" + "Lives left: " + LIVES--);
+            System.out.println("Too low!" + "Lives left: " + lives--);
         }
 
     }
