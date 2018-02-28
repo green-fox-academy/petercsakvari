@@ -15,11 +15,15 @@ public class Counter {
 
   public Counter (int value) {
     this.value = value;
+    initValue = value;
+  }
+
+  public Counter () {
+
   }
 
   public void add (int number) {
-    initValue += number;
-    value += number;
+    value = number;
   }
 
   public void add () {
@@ -31,6 +35,6 @@ public class Counter {
   }
 
   public void reset () {
-    value = initValue;
+    this.value = initValue;
   }
 }
