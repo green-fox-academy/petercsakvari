@@ -21,5 +21,4 @@ public class Station {
     gasAmount -= Car.getCapacity();
     Car.setGasAmount(gasAmount);
   }
-
 }
