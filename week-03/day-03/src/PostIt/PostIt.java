@@ -1,4 +1,4 @@
-package PostIt;
+package postit;
 
 import java.awt.*;
 

@@ -1,4 +1,4 @@
-package BlogPost;
+package blogpost;
 
 //Create a few blog post objects:
 //        "Lorem Ipsum" titled by John Doe posted at "2000.05.04."

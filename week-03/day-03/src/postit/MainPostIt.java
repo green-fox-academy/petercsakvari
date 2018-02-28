@@ -1,4 +1,4 @@
-package PostIt;
+package postit;
 
 //Create a few example post-it objects:
 //        an orange with blue text: "Idea 1"
@@ -7,7 +7,7 @@ package PostIt;
 
 import java.awt.*;
 
-public class Main {
+public class MainPostIt {
 
   public static void main(String[] args) {
 

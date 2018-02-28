@@ -1,6 +1,6 @@
-package BlogPost;
+package blogpost;
 
-//Create a BlogPost class that has
+//Create a blogpost class that has
 //        an authorName
 //        a title
 //        a text
