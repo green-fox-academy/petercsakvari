@@ -4,7 +4,7 @@ import java.util.*;
 public class homework {
   public static void main(String[] args) {
 
-    //TreeTypes
+    //TreeType
     Map<String, String> treeTypes = new HashMap<>();
     treeTypes.put("tree01", "willow");
     treeTypes.put("tree02", "maple");
