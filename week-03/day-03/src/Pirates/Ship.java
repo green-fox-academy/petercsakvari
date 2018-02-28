@@ -6,18 +6,23 @@ import java.util.Random;
 
 public class Ship {
 
+  private List<Pirate> crew = new ArrayList<>();
+
   private String randomPirateName() {
-    String abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase();
+    String upperCaseABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    String lowerCaseABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase();
     StringBuilder pirateName = new StringBuilder();
     Random random = new Random();
     while (pirateName.length() < 5) {
-      int index = (int) (random.nextFloat() * abc.length());
-      pirateName.append(abc.charAt(index));
+      int index = (int) (random.nextFloat() * upperCaseABC.length());
+      if (pirateName.length() == 0) {
+        pirateName.append(upperCaseABC.charAt(index));
+      } else {
+        pirateName.append(lowerCaseABC.charAt(index));
+      }
     }
     return pirateName.toString();
   }
-
-  private List<Pirate> crew = new ArrayList<>();
 
   public void fillShip () {
     Random random = new Random();
