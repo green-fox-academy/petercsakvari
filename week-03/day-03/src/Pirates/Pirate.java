@@ -9,12 +9,32 @@ public class Pirate {
   private int drunkenness = 0;
   private String rank = "Pirate";
 
+  public Pirate(String name) {
+    this.name = name;
+  }
+
   public void setRank (String newRank) {
     rank = newRank;
   }
 
-  public Pirate(String name) {
-    this.name = name;
+  private void checkIfDead() {
+    if (isDead) {
+      System.out.println("He's dead!");
+    }
+  }
+
+  public void drinkSomeRum() {
+    checkIfDead();
+    drunkenness++;
+  }
+
+  public void howsItGoingMate() {
+    checkIfDead();
+    talk();
+  }
+
+  public void die() {
+    isDead = true;
   }
 
   public void brawl (Pirate pirate1, Pirate pirate2) {
@@ -36,26 +56,6 @@ public class Pirate {
     }
   }
 
-  public void drinkSomeRum() {
-    checkIfDead();
-    drunkenness++;
-  }
-
-  public void howsItGoingMate() {
-    checkIfDead();
-    talk();
-  }
-
-  public void die() {
-    isDead = true;
-  }
-
-  private void checkIfDead() {
-    if (isDead) {
-      System.out.println("He's dead!");
-    }
-  }
-
   private void talk() {
     if (drunkenness >= 0 && drunkenness <= 4) {
       System.out.println("Pour me anudder!");
@@ -69,6 +69,4 @@ public class Pirate {
     checkIfDead();
     System.out.println("* the pirate passes out and sleeps it off *");
   }
-
 }
-

@@ -6,25 +6,23 @@ import java.util.Random;
 
 public class Ship {
 
-  //Random Name Generator
-  private String getSaltString() {
-    String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase();
-    StringBuilder salt = new StringBuilder();
-    Random rnd = new Random();
-    while (salt.length() < 5) { // length of the random string.
-      int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-      salt.append(SALTCHARS.charAt(index));
+  private String randomPirateName() {
+    String abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase();
+    StringBuilder pirateName = new StringBuilder();
+    Random random = new Random();
+    while (pirateName.length() < 5) {
+      int index = (int) (random.nextFloat() * abc.length());
+      pirateName.append(abc.charAt(index));
     }
-    return salt.toString();
+    return pirateName.toString();
   }
-  //^^Random Name Generator^^
 
   private List<Pirate> crew = new ArrayList<>();
 
   public void fillShip () {
     Random random = new Random();
     for (int j = 0; j < random.nextInt(29)+1; j++) {
-      crew.add(new Pirate(getSaltString()));
+      crew.add(new Pirate(randomPirateName()));
       if (j == random.nextInt(29)+1) {
         crew.get(j).setRank("Captain");
       }
