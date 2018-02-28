@@ -7,6 +7,11 @@ public class Pirate {
   private String name;
   private boolean isDead = false;
   private int drunkenness = 0;
+  private String rank = "Pirate";
+
+  public void setRank (String newRank) {
+    rank = newRank;
+  }
 
   public Pirate(String name) {
     this.name = name;
