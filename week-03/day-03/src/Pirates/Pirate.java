@@ -4,17 +4,24 @@ import java.util.Random;
 
 public class Pirate {
 
+  private String name;
   private boolean isDead = false;
   private int drunkenness = 0;
+
+  public Pirate(String name) {
+    this.name = name;
+  }
 
   public void brawl (Pirate pirate1, Pirate pirate2) {
     if (!pirate1.isDead && !pirate2.isDead) {
       Random random = new Random();
       int randomWin = random.nextInt(2) + 1;
       if (randomWin == 1) {
-        System.out.println(pirate1 + " won!");
+        System.out.println(pirate1.name + " won!");
+        pirate2.isDead = true;
       } else if (randomWin == 2) {
-        System.out.println(pirate2 + " won!");
+        System.out.println(pirate2.name + " won!");
+        pirate1.isDead = true;
       } else if (randomWin == 3) {
         pirate1.passOut();
         pirate2.passOut();
@@ -45,11 +52,10 @@ public class Pirate {
   }
 
   private void talk() {
-    checkIfDead();
     if (drunkenness >= 0 && drunkenness <= 4) {
-      System.out.println("Pirate: Pour me anudder!");
+      System.out.println("Pour me anudder!");
     } else {
-      System.out.println("Pirate: Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+      System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
       passOut();
     }
   }
