@@ -8,16 +8,16 @@ public class Bunny2 {
     System.out.println(ears(bunnies));
   }
   public static int ears(int bunnies){
-    int ears = 0;
+    int totalEars = 0;
     if (bunnies == 0) {
-      return ears;
+      return totalEars;
     } else {
       if (bunnies % 2 == 0) {
-        ears = 3 + ears(bunnies - 1);
+        totalEars = 3 + ears(bunnies - 1);
       } else {
-        ears = 2 + ears(bunnies - 1);
+        totalEars = 2 + ears(bunnies - 1);
       }
-      return ears;
+      return totalEars;
     }
   }
 }
