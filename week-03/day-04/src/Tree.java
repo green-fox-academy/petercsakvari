@@ -7,16 +7,15 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Tree {
 
   static int iterator = 0;
+  static int WIDTH = 700;
+  static int HEIGHT = 650;
 
   private static void mainDraw(Graphics graphics) throws InterruptedException {
-    //Random random = new Random();
     int x0 = WIDTH/2;
     int y0 = HEIGHT-150;
-    double branchLength = 10 + iterator * 5;
+    double branchLength = 5 + iterator * 6;
     double angle = 0;
-
     drawTree(graphics, x0, y0, branchLength, angle, colorRandomizer());
-
   }
 
   private static void drawTree(Graphics graphics, int x0, int y0, double length, double angle, Color randomColor) throws InterruptedException {
@@ -34,6 +33,7 @@ public class Tree {
 
     }
   }
+
   private static Color colorRandomizer() {
     Random random = new Random();
     int colorRange = 256;
@@ -41,15 +41,8 @@ public class Tree {
     int g = random.nextInt(colorRange);
     int b = random.nextInt(colorRange);
     Color randomColor = new Color(r, g, b);
-
-
     return randomColor;
   }
-
-
-  // Don't touch the code below
-  static int WIDTH = 600;
-  static int HEIGHT = 600;
 
   public static void main(String[] args) throws InterruptedException {
     JFrame jFrame = new JFrame("Tree");
@@ -72,7 +65,7 @@ public class Tree {
       } else {
         iterator--;
       }
-      Thread.sleep(500);
+      Thread.sleep(250);
       imagePanel.repaint();
     }
   }
