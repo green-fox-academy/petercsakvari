@@ -7,13 +7,13 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Tree {
 
   static int iterator = 0;
-  static int WIDTH = 700;
+  static int WIDTH = 800;
   static int HEIGHT = 650;
 
   private static void mainDraw(Graphics graphics) throws InterruptedException {
     int x0 = WIDTH/2;
-    int y0 = HEIGHT-150;
-    double branchLength = 5 + iterator * 6;
+    int y0 = HEIGHT-50;
+    double branchLength = 3 + iterator * 6;
     double angle = 0;
     drawTree(graphics, x0, y0, branchLength, angle, colorRandomizer());
   }
@@ -30,7 +30,6 @@ public class Tree {
 
       drawTree(graphics, x1, y1, length - 6, angle + 18, colorRandomizer());
       drawTree(graphics, x1, y1, length - 6, angle - 18, colorRandomizer());
-
     }
   }
 
@@ -55,7 +54,7 @@ public class Tree {
     imagePanel.setBackground(Color.black);
     boolean grow = true;
     while (true) {
-      if (iterator == 10) {
+      if (iterator == 12) {
         grow = false;
       } else if (iterator == 0) {
         grow = true;
@@ -75,7 +74,7 @@ public class Tree {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       Graphics2D g2 = (Graphics2D) graphics;
-      g2.setStroke(new BasicStroke(2));
+      g2.setStroke(new BasicStroke(iterator/5));
       try {
         mainDraw(graphics);
       } catch (InterruptedException e) {
