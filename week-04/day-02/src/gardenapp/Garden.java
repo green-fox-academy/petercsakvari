@@ -18,9 +18,21 @@ public class Garden {
     theGarden.add(tree01);
     theGarden.add(tree02);
 
+    int wateringAmount = 0;
+    printGarden(theGarden, wateringAmount);
+    wateringAmount = 40;
+    printGarden(theGarden, wateringAmount);
+    wateringAmount = 70;
+    printGarden(theGarden, wateringAmount);
+  }
+
+  public static void printGarden(List<Plant> theGarden, int wateringAmount){
+    System.out.println();
+    System.out.println("Watering with " + wateringAmount);
     for (Plant eachPlant : theGarden) {
+      eachPlant.watering(wateringAmount, theGarden);
       System.out.println("The " + eachPlant.getColor() + " " + eachPlant.getType() + " "
-              + eachPlant.checkWater() + ".");
+              + eachPlant.getWaterAmount() + ".");
     }
   }
 }
