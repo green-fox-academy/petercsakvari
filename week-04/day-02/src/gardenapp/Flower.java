@@ -1,7 +1,9 @@
 package gardenapp;
 
-public class Flower {
+public class Flower extends Plant {
 
-  int waterAmount;
-
+  public Flower(String color, int waterAmount) {
+    super(color, waterAmount);
+    type = "Flower";
+  }
 }
