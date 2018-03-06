@@ -19,6 +19,7 @@ public class Student extends Person {
     skippedDays = 0;
   }
 
+  @Override
   public void introduce() {
     System.out.println( "Hi, I'm " + name + ", a " + age + " year old gender from " + previousOrganization + " who " +
             "skipped " + skippedDays + " days from the course already.");
