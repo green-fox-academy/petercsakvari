@@ -29,17 +29,16 @@ public class Reservation implements Reservationy {
 
   private String randomDay() {
     String[] days = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
-    int index = rand.nextInt(7);
-    return days[index];
+    return days[rand.nextInt(7)];
   }
 
   private String randomId() {
     String abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345674890";
-    StringBuilder builder = new StringBuilder();
+    StringBuilder randomId = new StringBuilder();
     for (int i = 0; i < 8; i++) {
-      builder.append(abc.charAt(rand.nextInt(abc.length())));
+      randomId.append(abc.charAt(rand.nextInt(abc.length())));
     }
-    return builder.toString().toUpperCase();
+    return randomId.toString().toUpperCase();
   }
 
   private static void printReservations() {
