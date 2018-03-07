@@ -20,9 +20,8 @@ public class Student extends Person implements Cloneable {
   }
 
   @Override
-  public Object clone() {
-    Student studentClone = this;
-    return studentClone;
+  public Student clone() {
+    return this;
   }
 
   @Override
