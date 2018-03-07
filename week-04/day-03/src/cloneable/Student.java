@@ -19,8 +19,9 @@ public class Student extends Person implements Cloneable {
     skippedDays = 0;
   }
 
-  public Object clone(Student student) {
-    Student studentClone = student;
+  @Override
+  public Object clone() {
+    Student studentClone = this;
     return studentClone;
   }
 
