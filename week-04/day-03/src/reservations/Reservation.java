@@ -40,15 +40,20 @@ public class Reservation implements Reservationy {
     return builder.toString().toUpperCase();
   }
 
-  public static void main(String[] args) {
-
+  private static List<Reservation> createReservations() {
     List<Reservation> reservations = new ArrayList<>();
-    for (int i = 0; i < 8; i++) {
+    int numOfReservations = 5;
+    for (int i = 0; i < numOfReservations; i++) {
       reservations.add(new Reservation());
     }
+    return reservations;
+  }
 
-    for (Reservation reservation:reservations) {
+  public static void main(String[] args) {
+
+    for (Reservation reservation : createReservations()) {
       System.out.println("Booking# " + reservation.getCodeBooking() + " for " + reservation.getDowBooking());
+
     }
   }
 }
