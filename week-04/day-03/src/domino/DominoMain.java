@@ -4,12 +4,8 @@ import java.util.*;
 
 public class DominoMain {
   public static void main(String[] args) {
-
     //[[1,5], [2,4], [4,6], [5,2], [6,7], [7,1]]
-
     sortDominoes();
-
-
   }
 
   public static void sortDominoes() {
@@ -23,6 +19,6 @@ public class DominoMain {
     dominoes.add(new Domino(7, 1));
 
     Collections.sort(dominoes);
-    System.out.println(Arrays.asList(dominoes));
+    System.out.println(dominoes);
   }
 }
