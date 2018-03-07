@@ -1,10 +1,12 @@
 package reservations;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Reservation implements Reservationy {
+
+  public static void main(String[] args) {
+    printReservations();
+  }
 
   private String bookingId;
   private String day;
@@ -40,20 +42,11 @@ public class Reservation implements Reservationy {
     return builder.toString().toUpperCase();
   }
 
-  private static List<Reservation> createReservations() {
-    List<Reservation> reservations = new ArrayList<>();
+  private static void printReservations() {
     int numOfReservations = 5;
     for (int i = 0; i < numOfReservations; i++) {
-      reservations.add(new Reservation());
-    }
-    return reservations;
-  }
-
-  public static void main(String[] args) {
-
-    for (Reservation reservation : createReservations()) {
+      Reservation reservation = (new Reservation());
       System.out.println("Booking# " + reservation.getCodeBooking() + " for " + reservation.getDowBooking());
-
     }
   }
 }
