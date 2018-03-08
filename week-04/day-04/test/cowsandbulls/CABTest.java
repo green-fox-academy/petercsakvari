@@ -39,6 +39,6 @@ public class CABTest {
 
   @Test
   public void mainGameTest() {
-    assertEquals("[cow, bull, bull, nope]", cab.mainGame(number, guessedNum));
+    assertEquals(Arrays.asList("cow", "bull", "bull", "nope").toString(), cab.mainGame(number, guessedNum));
   }
 }
