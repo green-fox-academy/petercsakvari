@@ -25,8 +25,7 @@ public class Exercise10 {
             .map(fox -> fox.getName() + " ")
             .forEach(System.out::print);
   }
-
-
+  
 }
 class Fox {
   private String name;
