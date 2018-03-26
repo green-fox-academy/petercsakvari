@@ -8,6 +8,7 @@ public class Exercise6 {
             "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS"));
     cities.stream()
             .filter(s -> s.startsWith("A") && s.endsWith("I"))
+            .map(s -> s + " ")
             .forEach(System.out::print);
   }
 }
