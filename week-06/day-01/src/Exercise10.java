@@ -21,7 +21,8 @@ public class Exercise10 {
     System.out.println();
 
     foxList.stream()
-            .filter(fox -> fox.getColor().toLowerCase().equals("green") && fox.getType().toLowerCase().equals("pallida"))
+            .filter(fox -> fox.getColor().equalsIgnoreCase("green") &&
+                    fox.getType().equalsIgnoreCase("pallida"))
             .map(fox -> fox.getName() + " ")
             .forEach(System.out::print);
   }
