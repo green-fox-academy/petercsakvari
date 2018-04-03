@@ -8,7 +8,7 @@
 <div>
     <table>
         <tr th:each="data : ${hello}">
-            <td th:text="${data}"></td>
+            <td th:style="'color: ' + ${randColor}" th:text="${data}"></td>
         </tr>
     </table>
 </div>
