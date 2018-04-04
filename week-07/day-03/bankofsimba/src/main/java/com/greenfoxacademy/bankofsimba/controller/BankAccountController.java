@@ -16,11 +16,11 @@ public class BankAccountController {
   public String showAccount(Model model) {
 
     List<BankAccount> bankAccountList = new ArrayList<>();
-    bankAccountList.add(new BankAccount("Simba", 9850, "lion"));
-    bankAccountList.add(new BankAccount("Rafiki", 3100, "baboon"));
-    bankAccountList.add(new BankAccount("Scar", 5450, "lion"));
-    bankAccountList.add(new BankAccount("Pumbaa", 2400, "boar"));
-    bankAccountList.add(new BankAccount("Zazu", 3900, "bird"));
+    bankAccountList.add(new BankAccount("Simba", 9850, "lion", true, true));
+    bankAccountList.add(new BankAccount("Rafiki", 3100, "baboon",true));
+    bankAccountList.add(new BankAccount("Scar", 5450, "lion",false));
+    bankAccountList.add(new BankAccount("Pumba", 2400, "boar",true));
+    bankAccountList.add(new BankAccount("Zazu", 3900, "bird",true));
 
     model.addAttribute("bankAccList", bankAccountList);
     return "bankaccount";

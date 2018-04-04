@@ -9,9 +9,12 @@
 <div>
     <table>
         <tr th:each="acc : ${bankAccList}">
+            <td th:text="${accStat.index}"></td>
             <td th:text="${acc.getName()}"></td>
             <td th:text="${acc.balanceWithDecimals()}"></td>
             <td th:text="${acc.getAnimalType()}"></td>
+            <td th:text="((${acc.isKing()}) ? ('Yes') : ('No'))"></td>
+            <td th:text="((${acc.isGood()}) ? ('Good') : ('Bad'))"></td>
         </tr>
     </table>
 </div>
