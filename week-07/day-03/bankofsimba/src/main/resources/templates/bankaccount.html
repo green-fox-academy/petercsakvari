@@ -7,7 +7,7 @@
 </head>
 <body>
 <div th:object="${bankAcc}">
-   <p th:text="*{#object.name} + ' ' + *{#object.balance} + ' ' + *{#object.animalType}"></p>
+    <p th:text="*{#object.name} + ' ' + *{#object.balanceWithCurrency} + ' ' + *{#object.animalType}"></p>
 </div>
 </body>
 </html>
