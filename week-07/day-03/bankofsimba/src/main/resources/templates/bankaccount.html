@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Thymeleaf Exercise #</title>
+    <title>Bank of Simba</title>
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <meta charset="utf-8"/>
 </head>
 <body>
+<!-- TABLE -->
 <div>
     <table>
         <tr>
@@ -25,6 +26,19 @@
             <td th:text="((${acc.isGood()}) ? ('Good') : ('Bad'))"></td>
         </tr>
     </table>
+</div>
+<!-- FORM -->
+<div>
+    <form  action="#" th:action="@{/showaccounts}" th:object="${bankAccList}" method='POST'>
+        <label>
+            <select>
+                <option th:each="acc, stat : ${bankAccList}"
+                        th:value="${acc.getName()}"
+                        th:text="${acc.getName()}"></option>
+            </select>
+        </label>
+        <input name="submit" type="submit" value="submit" />
+    </form>
 </div>
 </body>
 </html>

@@ -2,16 +2,27 @@ table {
     border-collapse: collapse;
     font-family: helvetica, sans-serif;
 }
+
 table, th, td {
     border: 1px solid black;
 }
+
 th, td {
     height: 40px;
     width: 150px;
     text-align: center;
     vertical-align: center;
 }
+
 th {
     background-color: #29ad0f;
     color: white;
+}
+
+form {
+    padding-top: 40px;
+}
+
+h4 {
+    font-family: helvetica, sans-serif;
 }
