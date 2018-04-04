@@ -8,6 +8,14 @@
 <body>
 <div>
     <table>
+        <tr>
+            <th>Account No.</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Animal Type</th>
+            <th>is King</th>
+            <th>Good or Bad</th>
+        </tr>
         <tr th:each="acc : ${bankAccList}">
             <td th:text="${accStat.index}"></td>
             <td th:text="${acc.getName()}"></td>
