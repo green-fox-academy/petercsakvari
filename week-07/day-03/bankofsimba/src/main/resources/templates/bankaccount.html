@@ -6,8 +6,12 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<div th:object="${bankAcc}">
-    <p th:text="*{#object.name} + ' ' + *{#object.balanceWithCurrency} + ' ' + *{#object.animalType}"></p>
+<div>
+    <table>
+        <tr th:each="acc : ${bankAccList}">
+            <td th:text="${acc.getName()} + ' | ' + ${acc.getBalanceWithCurrency()} + ' | ' + ${acc.getAnimalType()}"></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
