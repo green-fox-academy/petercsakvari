@@ -16,7 +16,7 @@ public class BankAccountController {
   public String showAccount(Model model) {
 
     List<BankAccount> bankAccountList = new ArrayList<>();
-    bankAccountList.add(new BankAccount("Simba", 20000, "lion"));
+    bankAccountList.add(new BankAccount("Simba", 9850, "lion"));
     bankAccountList.add(new BankAccount("Rafiki", 3100, "baboon"));
     bankAccountList.add(new BankAccount("Scar", 5450, "lion"));
     bankAccountList.add(new BankAccount("Pumbaa", 2400, "boar"));

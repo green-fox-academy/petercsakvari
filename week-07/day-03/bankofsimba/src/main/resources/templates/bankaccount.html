@@ -9,7 +9,9 @@
 <div>
     <table>
         <tr th:each="acc : ${bankAccList}">
-            <td th:text="${acc.getName()} + ' | ' + ${acc.getBalanceWithCurrency()} + ' | ' + ${acc.getAnimalType()}"></td>
+            <td th:text="${acc.getName()}"></td>
+            <td th:text="${acc.balanceWithDecimals()}"></td>
+            <td th:text="${acc.getAnimalType()}"></td>
         </tr>
     </table>
 </div>
