@@ -1,4 +1,4 @@
-package com.greenfoxacademy.dependencies.model;
+package com.greenfoxacademy.dependencies.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -6,8 +6,12 @@ import org.springframework.stereotype.Component;
 @Component("bluecolor")
 public class BlueColor implements MyColor {
 
+  private Printer printer;
+
   @Autowired
-  Printer printer;
+  public BlueColor(Printer printer) {
+    this.printer = printer;
+  }
 
   @Override
   public void printColor() {

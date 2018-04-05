@@ -1,7 +1,7 @@
 package com.greenfoxacademy.dependencies;
 
-import com.greenfoxacademy.dependencies.model.MyColor;
-import com.greenfoxacademy.dependencies.model.Printer;
+import com.greenfoxacademy.dependencies.models.MyColor;
+import com.greenfoxacademy.dependencies.models.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -11,12 +11,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DependenciesApplication implements CommandLineRunner {
 
-  @Autowired
-  Printer printer;
+  private Printer printer;
+  private MyColor myColor;
 
   @Autowired
-  @Qualifier("bluecolor")
-  MyColor myColor;
+  public DependenciesApplication(Printer printer, @Qualifier("bluecolor") MyColor myColor) {
+    this.printer = printer;
+    this.myColor = myColor;
+  }
 
   public static void main(String[] args) {
     SpringApplication.run(DependenciesApplication.class, args);

@@ -1,4 +1,4 @@
-package com.greenfoxacademy.dependencies.model;
+package com.greenfoxacademy.dependencies.models;
 
 import org.springframework.stereotype.Component;
 
