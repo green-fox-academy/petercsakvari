@@ -8,12 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DependenciesApplication implements CommandLineRunner {
 
-  private Printer printer;
+  @Autowired
+  Printer printer;
 
   @Autowired
-  public DependenciesApplication(Printer printer) {
-    this.printer = printer;
-  }
+  BlueColor blueColor;
 
   public static void main(String[] args) {
     SpringApplication.run(DependenciesApplication.class, args);
@@ -22,5 +21,6 @@ public class DependenciesApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     System.out.println(printer.log("This no!"));
+    System.out.println(blueColor.printColor());
   }
 }
