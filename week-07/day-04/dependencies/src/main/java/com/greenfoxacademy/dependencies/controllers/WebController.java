@@ -25,7 +25,7 @@ public class WebController {
   @GetMapping("/useful/colored")
   public String colorBackground(Model model) {
     model.addAttribute("randColor", utilityService.randomColor());
-    return "colored";
+    return "colored_background";
   }
 
   @GetMapping("/useful/email")
