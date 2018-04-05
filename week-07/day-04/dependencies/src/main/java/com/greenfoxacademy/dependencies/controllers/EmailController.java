@@ -21,11 +21,9 @@ public class EmailController {
   public String checkEmail(@RequestParam(name = "email", required = false) String email, Model model) {
     model.addAttribute("email", email);
     if (utilityService.validateEmail(email)) {
-      model.addAttribute("validationMessage", " is a valid email address");
-      model.addAttribute("textColor", "green");
+      model.addAttribute("isValid", true);
     } else {
-      model.addAttribute("validationMessage", " is not a valid email address");
-      model.addAttribute("textColor", "red");
+      model.addAttribute("isValid", false);
     }
     return "email_validation";
   }

@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <h1 th:style="'color: ' + ${textColor}" th:text="${email} + ${validationMessage}"></h1>
+    <h1 th:style="'color: ' + (${isValid} ? 'green' : 'red')"
+        th:text="${email} + (${isValid} ? ' is a valid email address' : ' is not a valid email address')"></h1>
 </body>
 </html>
