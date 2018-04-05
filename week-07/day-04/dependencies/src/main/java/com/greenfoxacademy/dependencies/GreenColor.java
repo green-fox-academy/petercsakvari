@@ -2,11 +2,11 @@ package com.greenfoxacademy.dependencies;
 
 import org.springframework.stereotype.Component;
 
-@Component("bluecolor")
-public class BlueColor implements MyColor {
+@Component("greencolor")
+public class GreenColor implements MyColor {
 
   @Override
   public String printColor() {
-    return "It is blue in color...";
+    return "It is green in color...";
   }
 }
