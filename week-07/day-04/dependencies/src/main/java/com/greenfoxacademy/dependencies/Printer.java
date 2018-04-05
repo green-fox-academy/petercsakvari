@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-@Component
+@Component("printer")
 public class Printer {
 
   public Printer() {

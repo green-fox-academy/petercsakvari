@@ -13,7 +13,7 @@ public class DependenciesApplication implements CommandLineRunner {
   Printer printer;
 
   @Autowired
-  @Qualifier("greencolor")
+  @Qualifier("bluecolor")
   MyColor myColor;
 
   public static void main(String[] args) {
@@ -23,6 +23,6 @@ public class DependenciesApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     System.out.println(printer.log("This no!"));
-    System.out.println(myColor.printColor());
+    myColor.printColor();
   }
 }
