@@ -1,5 +1,7 @@
 package com.greenfoxacademy.dependencies;
 
+import com.greenfoxacademy.dependencies.model.MyColor;
+import com.greenfoxacademy.dependencies.model.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;

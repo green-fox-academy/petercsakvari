@@ -1,4 +1,4 @@
-package com.greenfoxacademy.dependencies;
+package com.greenfoxacademy.dependencies.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
