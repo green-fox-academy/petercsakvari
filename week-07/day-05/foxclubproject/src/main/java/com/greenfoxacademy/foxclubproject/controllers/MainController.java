@@ -32,8 +32,7 @@ public class MainController {
 
   @PostMapping("/login")
   public String login(@ModelAttribute(name = "name") String name, Model model) {
-    System.out.println(name);
     model.addAttribute("fox", foxFactory.createFox(name));
-    return "login";
+    return "redirect:/?name=" + name;
   }
 }
