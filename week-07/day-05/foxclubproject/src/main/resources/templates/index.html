@@ -7,17 +7,19 @@
 <body>
 <div>
     <ul>
-        <li><a href="http://localhost:8080/">Information</a></li>
+        <li><a href="'http://localhost:8080/">Information</a></li>
         <li><a href="http://localhost:8080/login">Login</a></li>
     </ul>
     <img th:src="@{greenfox.png}" alt="Greenfox">
-    <p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ' and ' +'. He knows ' + ' tricks.'"></p>
+    <p th:text="'This is ' + ${fox.getName()} +
+    '. Currently living on ' + ${fox.getFood()} + ' and ' + ${fox.getDrink()} +
+    '. He knows ' + ${fox.getTricksList().size()} + ' tricks.'"></p>
 </div>
 <div>
     <h1>Known tricks</h1>
-    <ul>
-        <li>Write HTML</li>
-        <li>Code in Java</li>
+    <p th:text="(!${knowsTricks} ? 'You know no tricks :(')"></p>
+    <ul th:each="trick : ${fox.getTricksList()}">
+        <li th:text="${trick}"></li>
     </ul>
 </div>
 </body>

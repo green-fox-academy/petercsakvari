@@ -18,4 +18,8 @@ public class FoxServiceImpl implements FoxService {
   public Fox getFox(String name) {
     return foxRepository.findFox(name);
   }
+
+  public boolean knowsTricks(String name) {
+    return !foxRepository.findFox(name).getTricksList().isEmpty();
+  }
 }

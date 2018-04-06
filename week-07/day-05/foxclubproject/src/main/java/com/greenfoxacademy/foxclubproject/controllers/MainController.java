@@ -25,6 +25,7 @@ public class MainController {
     if (name == null) {
       return "redirect:/login";
     } else {
+      model.addAttribute("knowsTricks", foxService.knowsTricks(name));
       model.addAttribute("fox", foxService.getFox(name));
       return "index";
     }
