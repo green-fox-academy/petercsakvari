@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
@@ -9,7 +9,7 @@
     <ul>
         <li><a href="http://localhost:8080/">Information</a></li>
     </ul>
-    <img src="greenfox.png" alt="Greenfox">
+    <img th:src="@{greenfox.png}" alt="Greenfox">
     <p>This is Mr.Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
 </div>
 <div>
