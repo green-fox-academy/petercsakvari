@@ -1,8 +1,10 @@
 package com.greenfoxacademy.foxclubproject.controllers;
 
+import com.greenfoxacademy.foxclubproject.factories.FoxFactory;
 import com.greenfoxacademy.foxclubproject.models.Fox;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
-  private Fox fox;
+  private FoxFactory foxFactory;
 
   @Autowired
-  public MainController(Fox fox) {
-    this.fox = fox;
+  public MainController(FoxFactory foxFactory) {
+    this.foxFactory = foxFactory;
   }
 
   @GetMapping("/")
@@ -29,7 +31,9 @@ public class MainController {
   }
 
   @PostMapping("/login")
-  public String login(@ModelAttribute(name = "name") String name) {
+  public String login(@ModelAttribute(name = "name") String name, Model model) {
+    System.out.println(name);
+    model.addAttribute("fox", foxFactory.createFox(name));
     return "login";
   }
 }

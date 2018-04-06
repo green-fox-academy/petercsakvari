@@ -6,10 +6,10 @@
 </head>
 <body>
 <div>
-    <h1>Welcome to the Programming Fox Club!</h1>
+    <h1 th:text="'Welcome to the Programming Fox Club!'"></h1>
 </div>
 <div>
-    <p>Please provide a name, so you can associate it to your pet!</p>
+    <p th:text="'Please provide a name, so you can associate it to your pet!'"></p>
     <form action="#" th:action="@{/login}" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" />
