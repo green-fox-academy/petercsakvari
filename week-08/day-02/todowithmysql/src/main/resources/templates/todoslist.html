@@ -2,15 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Todo</title>
-    <link rel="stylesheet" th:href="@{/style.css}" />
-    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
 </head>
 <body>
-<div>
-    <h1 th:text="'Todos for today:'"></h1>
-    <ul th:each="todo : ${todos}">
-        <li th:text="${todo.getDescription()}"></li>
-    </ul>
+<div id="title" style="overflow-x:auto;">
+    <h1 th:text="'TODOS FOR TODAY'"></h1>
+</div>
+<div style="overflow-x:auto;">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>ACTION</th>
+            <th>URGENT</th>
+            <th>DONE</th>
+        </tr>
+        <tr th:each="todo : ${todos}">
+            <td th:text="${todo.id}"></td>
+            <td th:text="${todo.description}"></td>
+            <td th:text="${todo.urgent}"></td>
+            <td th:text="${todo.done}"></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
