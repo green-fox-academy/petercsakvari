@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todo</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<div>
+    <h1 th:text="'Todos for today:'"></h1>
+    <ul th:each="todo : ${todos}">
+        <li th:text="${todo.getDescription()}"></li>
+    </ul>
+</div>
+</body>
+</html>
