@@ -18,12 +18,10 @@ import java.util.stream.Collectors;
 @RequestMapping("/todo")
 public class TodoController {
 
-  private TodoRepository todoRepository;
   private TodoService todoService;
 
   @Autowired
-  public TodoController(TodoRepository todoRepository, TodoService todoService) {
-    this.todoRepository = todoRepository;
+  public TodoController(TodoService todoService) {
     this.todoService = todoService;
   }
 
