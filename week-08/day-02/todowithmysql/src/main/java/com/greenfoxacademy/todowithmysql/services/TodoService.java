@@ -30,7 +30,7 @@ public class TodoService {
 
   public List<Todo> getActiveTodos() {
     return getAllTodos().stream()
-            .filter(Todo::isDone)
+            .filter(todo -> !todo.isDone())
             .collect(Collectors.toList());
   }
 }
