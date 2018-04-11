@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todo Edit</title>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link th:href="@{/style.css}" rel="stylesheet"/>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<div>
+    <h1>Todo Edit</h1>
+</div>
+<div class="form-group">
+    <form action="#" th:action="@{edit}" th:object="${todo}" method="post">
+        <div class="form-check form-check-inline">
+            <label for="urgentEdit">Urgent</label>
+            <input type="checkbox" id="urgentEdit" th:checked="*{urgent}">
+        </div>
+        <div class="form-check form-check-inline">
+            <label for="doneEdit">Done</label>
+            <input type="checkbox" id="doneEdit" th:checked="*{done}">
+        </div>
+
+        <div id="descriptionDiv">
+            <label for="changeDescription">Description</label>
+            <input class="form-control" type="text" id="changeDescription" th:value="*{description}">
+        </div>
+
+        <div id="buttonsDiv">
+            <input class="btn btn-success btn-xs" type="submit" value="SUBMIT"><a class="btn btn-danger btn-xs"
+                                                                                  href="/todo/">CANCEL</a>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

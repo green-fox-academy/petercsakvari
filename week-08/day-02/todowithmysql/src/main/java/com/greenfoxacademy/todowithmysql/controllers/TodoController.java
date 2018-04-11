@@ -4,10 +4,7 @@ import com.greenfoxacademy.todowithmysql.services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -21,7 +18,7 @@ public class TodoController {
     this.todoService = todoService;
   }
 
-  @RequestMapping(value = {"", "/list"}, method = RequestMethod.GET)
+  @GetMapping(value = {"", "/list"})
   public String list(@RequestParam(name = "isActive", required = false) String isActive, Model model) {
     if (Boolean.parseBoolean(isActive)) {
       model.addAttribute("todos", todoService.getActiveTodos());
@@ -31,9 +28,19 @@ public class TodoController {
     return "todoslist";
   }
 
-  @RequestMapping(value = {"/{id}/delete", "/list/{id}/delete"}, method = RequestMethod.GET)
-  public String delete(@PathVariable(name = "id") Long id) {
+  @GetMapping(value = {"/{id}/delete", "/list/{id}/delete"})
+  public String deleteTodo(@PathVariable(name = "id") Long id) {
     todoService.deleteTodo(id);
     return "redirect:/todo";
   }
+
+  @GetMapping(value = "/{id}/edit")
+  public String editTodo(@PathVariable(name = "id") Long id, Model model) {
+    if (todoService.getTodoById(id) != null) {
+      model.addAttribute("todo", todoService.getTodoById(id));
+    }
+    return "todoedit";
+  }
+
+
 }

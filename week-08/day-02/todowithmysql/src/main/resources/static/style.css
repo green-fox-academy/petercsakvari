@@ -16,7 +16,7 @@
 
 .check_mark {
     text-align: center;
-    color: green;
+    color: forestgreen;
 }
 
 .x_mark {
@@ -24,6 +24,12 @@
     color: red;
 }
 
-th {
+th, td {
     text-align: center;
+    vertical-align: center;
+}
+
+#descriptionDiv #buttonsDiv{
+    max-width: 400px;
+    margin: 0 auto;
 }
