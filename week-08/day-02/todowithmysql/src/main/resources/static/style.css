@@ -29,7 +29,24 @@ th, td {
     vertical-align: center;
 }
 
-#descriptionDiv #buttonsDiv{
+#formTitle {
+    text-align: center;
+}
+
+#urgentDiv {
+    text-align: center;
+}
+
+#doneDiv {
+    text-align: center;
+}
+
+#descriptionDiv {
     max-width: 400px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#buttonsDiv {
+    text-align: center;
 }
