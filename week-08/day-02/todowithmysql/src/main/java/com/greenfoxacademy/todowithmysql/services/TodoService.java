@@ -33,4 +33,8 @@ public class TodoService {
             .filter(todo -> !todo.isDone())
             .collect(Collectors.toList());
   }
+
+  public void deleteTodo(Long id) {
+    todoRepository.deleteById(id);
+  }
 }

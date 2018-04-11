@@ -1,25 +1,29 @@
 #title {
     font-family: Helvetica, sans-serif;
-    background-color: #158ba5;
     text-align: center;
     vertical-align: center;
-    color: white;
-}
-table {
-    font-family: Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
 }
 
-td, th {
-    border: 1px solid #ddd;
-    padding: 8px;
+.table {
+    max-width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.id {
+    text-align: center;
+}
+
+.check_mark {
+    text-align: center;
+    color: green;
+}
+
+.x_mark {
+    text-align: center;
+    color: red;
 }
 
 th {
-    padding-top: 12px;
-    padding-bottom: 12px;
     text-align: center;
-    background-color: #158ba5;
-    color: white;
 }
