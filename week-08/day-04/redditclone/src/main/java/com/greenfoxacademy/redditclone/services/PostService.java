@@ -19,7 +19,7 @@ public class PostService {
     this.postRepository = postRepository;
   }
 
-  public List<Post> listAllPosts() {
+  public List<Post> listAllPostsSorted() {
     List<Post> allPosts = new ArrayList<>();
     postRepository.findAll().forEach(allPosts::add);
     return allPosts;

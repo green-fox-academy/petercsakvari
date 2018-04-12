@@ -7,21 +7,21 @@
     <title>Reddit Clone</title>
 </head>
 <body>
-<div class="submitbutton">
-    <h2><a href="/submit">Submit new post</a></h2>
-</div>
 <div id="title">
     <h1>Trending posts</h1>
 </div>
-<div id="posts">
-    <table>
-    <tbody>
-    <tr th:each="post : ${allPosts}">
-        <td th:text="${post.voteCount}"></td>
-        <td><a class="image" th:href="'/' + ${post.id} + '/incr'" th:text="'&#8679'"></a></td>
-        <td><a class="image" th:href="'/' + ${post.id} + '/decr'" th:text="'&#8681'"></a></td>
-        <td><a th:href="${post.url}" th:text="${post.title}"></a></td>
-    </tbody>
+<div class="submitbutton">
+    <h2><a class="btn btn-success btn-lg" href="/submit">Submit new post</a></h2>
+</div>
+<div id="posts" class="table-responsive">
+    <table class="table borderless">
+        <tbody>
+        <tr th:each="post : ${allPosts}">
+            <td id="votecount" th:text="${post.voteCount}"></td>
+            <td><a class="icon" th:href="'/' + ${post.id} + '/incr'" th:text="'&#8679'" th:style="'color: green'"></a></td>
+            <td><a class="icon" th:href="'/' + ${post.id} + '/decr'" th:text="'&#8681'" th:style="'color: red'"></a></td>
+            <td><a th:href="${post.url}" th:text="${post.title}"></a></td>
+        </tbody>
     </table>
 </div>
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>

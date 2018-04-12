@@ -26,9 +26,5 @@ public class RedditcloneApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		postRepository.save(new Post("There is definitely a treasure behind this wall"));
-		postRepository.save(new Post("How this Russian guy heats up a sandwich"));
-		postRepository.save(new Post("Deleting browser history in the 80’s"));
-		postRepository.save(new Post("Easily the best joke I’ve ever made"));
 	}
 }

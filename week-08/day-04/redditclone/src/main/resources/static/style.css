@@ -1,9 +1,28 @@
-#title #posts {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+.submitbutton, h1{
+    text-align: left;
+    margin-left: 30px;
 }
 
-.image {
+.table-responsive {
+    max-width: 800px;
+    margin-left: 30px;
+}
+
+.borderless td, .borderless th {
+    border: 0;
+}
+
+.table > tbody > tr > td {
+    border-top: 0;
+    font-size: x-large;
+}
+
+.icon {
     text-decoration: none;
+}
+
+#submitpostformdiv {
+    font-size: large;
+    max-width: 600px;
+    margin-left: 30px;
 }

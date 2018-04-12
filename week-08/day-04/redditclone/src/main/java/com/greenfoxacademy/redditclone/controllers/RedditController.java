@@ -21,7 +21,7 @@ public class RedditController {
 
   @GetMapping("/")
   public String showTrending(Model model) {
-    model.addAttribute("allPosts", postService.listAllPosts());
+    model.addAttribute("allPosts", postService.listAllPostsSorted());
     return "index";
   }
 
