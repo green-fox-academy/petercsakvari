@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/style.css}" rel="stylesheet"/>
+    <title>Reddit Clone</title>
+</head>
+<body>
+<div class="submitbutton">
+    <h2><a href="/submit">Submit new post</a></h2>
+</div>
+<div id="title">
+    <h1>Trending posts</h1>
+</div>
+<div id="posts">
+    <table>
+    <tbody>
+    <tr th:each="post : ${allPosts}">
+        <td th:text="${post.voteCount}"></td>
+        <td><a class="image" th:href="${post.url}" th:text="'&#10010'"></a></td>
+        <td><a class="image" th:href="${post.url}" th:text="'&#9986'"></a></td>
+        <td><a th:href="${post.url}" th:text="${post.title}"></a></td>
+    </tbody>
+    </table>
+</div>
+</body>
+</html>
