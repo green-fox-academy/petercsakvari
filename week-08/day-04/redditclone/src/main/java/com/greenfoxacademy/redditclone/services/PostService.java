@@ -20,9 +20,7 @@ public class PostService {
   }
 
   public List<Post> listAllPostsSorted() {
-    List<Post> allPosts = new ArrayList<>();
-    postRepository.findAll().forEach(allPosts::add);
-    return allPosts;
+    return postRepository.findAllByOrderByVoteCountDesc();
   }
 
   public void submitPost(String title, String url) {
