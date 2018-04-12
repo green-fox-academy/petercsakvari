@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <link th:href="@{/style.css}" rel="stylesheet"/>
     <title>Reddit Clone</title>
 </head>
@@ -17,11 +18,13 @@
     <tbody>
     <tr th:each="post : ${allPosts}">
         <td th:text="${post.voteCount}"></td>
-        <td><a class="image" th:href="${post.url}" th:text="'&#10010'"></a></td>
-        <td><a class="image" th:href="${post.url}" th:text="'&#9986'"></a></td>
+        <td><a class="image" th:href="'/' + ${post.id} + '/incr'" th:text="'&#10010'"></a></td>
+        <td><a class="image" th:href="'/' + ${post.id} + '/decr'" th:text="'&#9986'"></a></td>
         <td><a th:href="${post.url}" th:text="${post.title}"></a></td>
     </tbody>
     </table>
 </div>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>

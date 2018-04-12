@@ -46,4 +46,8 @@ public class Post {
   public int getVoteCount() {
     return voteCount;
   }
+
+  public void setVoteCount(int voteCount) {
+    this.voteCount = voteCount;
+  }
 }

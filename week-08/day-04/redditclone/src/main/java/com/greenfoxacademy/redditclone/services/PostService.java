@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class PostService {
@@ -22,5 +23,22 @@ public class PostService {
     List<Post> allPosts = new ArrayList<>();
     postRepository.findAll().forEach(allPosts::add);
     return allPosts;
+  }
+
+  public void submitPost(String title, String url) {
+    postRepository.save(new Post(title, url));
+  }
+
+  public void changePostVoteCount(Long id, boolean increaseCount) {
+    Optional<Post> optionalPost = postRepository.findById(id);
+    if (optionalPost.isPresent()) {
+      Post post = optionalPost.get();
+      if (increaseCount) {
+        post.setVoteCount(post.getVoteCount() + 1);
+      } else {
+        post.setVoteCount(post.getVoteCount() - 1);
+      }
+      postRepository.save(post);
+    }
   }
 }
