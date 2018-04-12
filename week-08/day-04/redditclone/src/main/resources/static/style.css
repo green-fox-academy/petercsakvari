@@ -1,10 +1,9 @@
-.submitbutton, h1{
+.submitbutton, h1 {
     text-align: left;
     margin-left: 30px;
 }
 
 .table-responsive {
-    max-width: 800px;
     margin-left: 30px;
 }
 
@@ -14,7 +13,12 @@
 
 .table > tbody > tr > td {
     border-top: 0;
-    font-size: x-large;
+    font-size: large;
+}
+
+.table a {
+    display: block;
+    text-decoration: none;
 }
 
 .icon {
@@ -25,4 +29,8 @@
     font-size: large;
     max-width: 600px;
     margin-left: 30px;
+}
+
+.date {
+    font-size: 12px;
 }

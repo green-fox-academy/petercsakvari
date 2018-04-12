@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Component
 @Entity
@@ -16,9 +17,11 @@ public class Post {
   private String title;
   private String url;
   private int voteCount;
+  private LocalDate publishDate;
 
   public Post() {
     voteCount = 0;
+    publishDate = LocalDate.now();
   }
 
   public Post(String title) {
@@ -45,6 +48,10 @@ public class Post {
 
   public int getVoteCount() {
     return voteCount;
+  }
+
+  public LocalDate getPublishDate() {
+    return publishDate;
   }
 
   public void setVoteCount(int voteCount) {

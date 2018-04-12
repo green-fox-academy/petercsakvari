@@ -18,11 +18,17 @@
         <tbody>
         <tr th:each="post : ${allPosts}">
             <td id="votecount" th:text="${post.voteCount}"></td>
-            <td><a class="icon" th:href="'/' + ${post.id} + '/incr'" th:text="'&#8679'" th:style="'color: green'"></a></td>
-            <td><a class="icon" th:href="'/' + ${post.id} + '/decr'" th:text="'&#8681'" th:style="'color: red'"></a></td>
-            <td><a th:href="${post.url}" th:text="${post.title}"></a></td>
+            <td><a class="icon" th:href="'/' + ${post.id} + '/incr'" th:text="'&#8593'" th:style="'color: green'"></a>
+            </td>
+            <td><a class="icon" th:href="'/' + ${post.id} + '/decr'" th:text="'&#8595'" th:style="'color: red'"></a>
+            </td>
+            <td><a th:href="${post.url}" th:text="${post.title}"></a>
+                <p class="date" th:text="((${post.publishDate} == null) ? 'publish date unknown' : ${post.publishDate})"></p></td>
         </tbody>
     </table>
+</div>
+<div class="submitbutton">
+    <h2><a class="btn btn-default btn-sm disabled" href="/">More posts</a></h2>
 </div>
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
