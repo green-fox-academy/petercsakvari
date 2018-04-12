@@ -18,8 +18,8 @@
     <tbody>
     <tr th:each="post : ${allPosts}">
         <td th:text="${post.voteCount}"></td>
-        <td><a class="image" th:href="'/' + ${post.id} + '/incr'" th:text="'&#10010'"></a></td>
-        <td><a class="image" th:href="'/' + ${post.id} + '/decr'" th:text="'&#9986'"></a></td>
+        <td><a class="image" th:href="'/' + ${post.id} + '/incr'" th:text="'&#8679'"></a></td>
+        <td><a class="image" th:href="'/' + ${post.id} + '/decr'" th:text="'&#8681'"></a></td>
         <td><a th:href="${post.url}" th:text="${post.title}"></a></td>
     </tbody>
     </table>

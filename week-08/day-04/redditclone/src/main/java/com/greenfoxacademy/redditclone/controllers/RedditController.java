@@ -36,7 +36,6 @@ public class RedditController {
     return "redirect:/";
   }
 
-
   @GetMapping("/{id}/incr")
   public String incrVoteCount(@PathVariable(name = "id") Long id) {
     postService.changePostVoteCount(id, true);
@@ -48,5 +47,4 @@ public class RedditController {
     postService.changePostVoteCount(id, false);
     return "redirect:/";
   }
-
 }
