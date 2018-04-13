@@ -23,10 +23,11 @@ public class PostService {
   }
 
   public List<Post> listTrendingPostsSorted() {
-    if (listAllPostsSorted().size() >= 9) {
-      return listAllPostsSorted().subList(0, 9);
+    List<Post> sortedPosts = listAllPostsSorted();
+    if (sortedPosts.size() >= 9) {
+      return sortedPosts.subList(0, 9);
     } else {
-      return listAllPostsSorted();
+      return sortedPosts;
     }
   }
 

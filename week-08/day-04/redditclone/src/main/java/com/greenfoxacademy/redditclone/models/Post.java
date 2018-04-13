@@ -20,17 +20,17 @@ public class Post {
   private LocalDate publishDate;
 
   public Post() {
-    voteCount = 0;
     publishDate = LocalDate.now();
   }
 
-  public Post(String title) {
+  public Post(String title, int voteCount) {
     this();
     this.title = title;
+    this.voteCount = voteCount;
   }
 
   public Post(String title, String url) {
-    this(title);
+    this(title, 0);
     this.url = url;
   }
 
