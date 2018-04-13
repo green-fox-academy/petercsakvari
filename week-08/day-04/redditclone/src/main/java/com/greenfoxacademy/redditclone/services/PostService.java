@@ -3,12 +3,12 @@ package com.greenfoxacademy.redditclone.services;
 import com.greenfoxacademy.redditclone.models.Post;
 import com.greenfoxacademy.redditclone.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Service
 public class PostService {
 
   private PostRepository postRepository;
