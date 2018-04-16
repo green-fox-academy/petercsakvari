@@ -1,6 +1,7 @@
 package com.greenfoxacademy.rest.controllers;
 
 import com.greenfoxacademy.rest.models.ArrayHandler;
+import com.greenfoxacademy.rest.models.ErrorMessage;
 import com.greenfoxacademy.rest.models.Until;
 import com.greenfoxacademy.rest.services.MainServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class MainController {
     if (number != null) {
       return mainService.doubleInput(number);
     } else {
-      return "{\"error\": \"Please provide an input!\"}";
+      return new ErrorMessage("Please provide an input!");
     }
   }
 
@@ -37,11 +38,7 @@ public class MainController {
   @ResponseBody
   public Object greeting(@RequestParam(name = "name", required = false) String input,
                          @RequestParam(name = "title", required = false) String title) {
-    if (input != null && title != null) {
-      return mainService.greeterResponse(input, title);
-    } else {
-      return "{\"error\": \"Please provide a name!\"}";
-    }
+    return mainService.greetingResponse(input, title);
   }
 
   @GetMapping("/appenda/{appendable}")
@@ -53,22 +50,12 @@ public class MainController {
   @PostMapping("/dountil/{what}")
   @ResponseBody
   public Object doUntil(@PathVariable(name = "what") String s, @RequestBody Until until) {
-    if (s.equals("sum")) {
-      return mainService.sumUntil(until);
-    } else if (s.equals("factor")) {
-      return mainService.factorUntil(until);
-    }
-    return null;
+    return mainService.doUntilResponse(s, until);
   }
 
   @PostMapping("/arrays")
   @ResponseBody
   public Object arrayHandler(@RequestBody ArrayHandler arrayHandler) {
-    String what = arrayHandler.getWhat();
-    if (what.equals("sum") || what.equals("multiply")) {
-      return mainService.arrayHandlerIntResponse(arrayHandler);
-    } else {
-      return mainService.arrayHandlerArrayResponse(arrayHandler);
-    }
+    return mainService.arrayHandlerResponse(arrayHandler);
   }
 }

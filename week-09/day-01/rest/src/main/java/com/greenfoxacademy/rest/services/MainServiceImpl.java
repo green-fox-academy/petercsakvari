@@ -4,7 +4,6 @@ import com.greenfoxacademy.rest.models.*;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 @Service
 public class MainServiceImpl {
@@ -21,15 +20,30 @@ public class MainServiceImpl {
     return new DoubleResponse(input);
   }
 
-  public GreeterResponse greeterResponse(String name, String title) {
-    return new GreeterResponse(name, title);
+  public Object greetingResponse(String name, String title) {
+    if (name != null && title != null) {
+      return new GreeterResponse(name, title);
+    } else {
+      return new ErrorMessage("Please provide a name!");
+    }
   }
 
   public AppendAResponse appendWithA(String s) {
     return new AppendAResponse(s);
   }
 
-  public DoUntilResponse sumUntil(Until until) {
+  public DoUntilResponse doUntilResponse(String s, Until until) {
+    switch (s) {
+      case "sum":
+        return sumUntil(until);
+      case "factor":
+        return factorUntil(until);
+      default:
+        return null;
+    }
+  }
+
+  private DoUntilResponse sumUntil(Until until) {
     int num = until.getUntil();
     int sum = 0;
     for (int i = num; i > 0; i--) {
@@ -38,7 +52,7 @@ public class MainServiceImpl {
     return new DoUntilResponse(sum);
   }
 
-  public DoUntilResponse factorUntil(Until until) {
+  private DoUntilResponse factorUntil(Until until) {
     int num = until.getUntil();
     int factor = num;
     for (int i = num - 1; i > 0; i--) {
@@ -47,12 +61,21 @@ public class MainServiceImpl {
     return new DoUntilResponse(factor);
   }
 
-  public ArrayHandlerIntResponse arrayHandlerIntResponse(ArrayHandler arrayHandler) {
+  public Object arrayHandlerResponse(ArrayHandler arrayHandler) {
+    String what = arrayHandler.getWhat();
+    if (what.equals("sum") || what.equals("multiply")) {
+      return arrayHandlerIntResponse(arrayHandler);
+    } else {
+      return arrayHandlerArrayResponse(arrayHandler);
+    }
+  }
+
+  private ArrayHandlerIntResponse arrayHandlerIntResponse(ArrayHandler arrayHandler) {
     String what = arrayHandler.getWhat();
     int[] numbers = arrayHandler.getNumbers();
     if (what.equals("sum")) {
-    return new ArrayHandlerIntResponse(Arrays.stream(numbers).sum());
-    } else  {
+      return new ArrayHandlerIntResponse(Arrays.stream(numbers).sum());
+    } else {
       int multiply = 1;
       for (int num : numbers) {
         multiply *= num;
@@ -61,7 +84,7 @@ public class MainServiceImpl {
     }
   }
 
-  public ArrayHandlerArrayResponse arrayHandlerArrayResponse(ArrayHandler arrayHandler) {
+  private ArrayHandlerArrayResponse arrayHandlerArrayResponse(ArrayHandler arrayHandler) {
     int[] numbers = arrayHandler.getNumbers();
     int[] response = Arrays.stream(numbers).map(i -> i * 2).toArray();
     return new ArrayHandlerArrayResponse(response);
