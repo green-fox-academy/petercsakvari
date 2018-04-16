@@ -22,7 +22,6 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PostServiceTest {
-
   @Mock
   private PostRepository postRepository;
   @InjectMocks
@@ -88,8 +87,6 @@ public class PostServiceTest {
   public void submitPostTest() {
     String title = "test";
     String url = "http://test.hu";
-//    Post post = new Post(title, url);
-//    when(postRepository.save(any(Post.class))).thenReturn(post);
     postService.submitPost(title, url);
     verify(postRepository, atLeastOnce()).save((any(Post.class)));
   }
