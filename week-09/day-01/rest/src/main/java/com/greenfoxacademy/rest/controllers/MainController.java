@@ -33,4 +33,15 @@ public class MainController {
       return "{\"error\": \"Please provide an input!\"}";
     }
   }
+
+  @GetMapping("/greeting")
+  @ResponseBody
+  public Object greeting(@RequestParam(name = "name") String input,
+                         @RequestParam(name = "title") String title) {
+    if (input != null && title != null) {
+      return "{\"welcome_message\": \"Oh, hi there " + input + ", my dear " + title + "!\"}";
+    } else {
+      return "{\"error\": \"Please provide a name!\"}";
+    }
+  }
 }
