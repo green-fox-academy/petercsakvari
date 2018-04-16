@@ -1,14 +1,11 @@
 package com.greenfoxacademy.rest.controllers;
 
-import com.greenfoxacademy.rest.models.DoubleResponse;
+import com.greenfoxacademy.rest.models.ArrayHandler;
 import com.greenfoxacademy.rest.models.Until;
 import com.greenfoxacademy.rest.services.MainServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @Controller
 public class MainController {
@@ -62,5 +59,11 @@ public class MainController {
       return mainService.factorUntil(until);
     }
     return null;
+  }
+
+  @PostMapping("/arrays")
+  @ResponseBody
+  public Object arrayHandler(@RequestBody ArrayHandler arrayHandler) {
+    return mainService.arrayHandlerResponse(arrayHandler);
   }
 }

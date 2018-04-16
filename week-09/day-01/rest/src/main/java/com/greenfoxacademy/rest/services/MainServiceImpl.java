@@ -43,4 +43,8 @@ public class MainServiceImpl {
     }
     return new DoUntilResponse(factor);
   }
+
+  public ArrayHandlerResponse arrayHandlerResponse(ArrayHandler arrayHandler) {
+  return null;
+  }
 }
