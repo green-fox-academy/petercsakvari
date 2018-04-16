@@ -32,14 +32,18 @@ public class MainServiceImpl {
     return new AppendAResponse(s);
   }
 
-  public DoUntilResponse doUntilResponse(String s, Until until) {
-    switch (s) {
-      case "sum":
-        return sumUntil(until);
-      case "factor":
-        return factorUntil(until);
-      default:
-        return null;
+  public Object doUntilResponse(String s, Until until) {
+    if (until != null) {
+      switch (s) {
+        case "sum":
+          return sumUntil(until);
+        case "factor":
+          return factorUntil(until);
+        default:
+          return null;
+      }
+    } else {
+      return new ErrorMessage("Please provide a number!");
     }
   }
 
@@ -62,12 +66,17 @@ public class MainServiceImpl {
   }
 
   public Object arrayHandlerResponse(ArrayHandler arrayHandler) {
-    String what = arrayHandler.getWhat();
-    if (what.equals("sum") || what.equals("multiply")) {
-      return arrayHandlerIntResponse(arrayHandler);
-    } else {
-      return arrayHandlerArrayResponse(arrayHandler);
+    if (arrayHandler != null && arrayHandler.getWhat() != null) {
+      String what = arrayHandler.getWhat();
+      switch (what) {
+        case "sum":
+        case "multiply":
+          return arrayHandlerIntResponse(arrayHandler);
+        case "double":
+          return arrayHandlerArrayResponse(arrayHandler);
+      }
     }
+    return new ErrorMessage("Please provide what to do with the numbers!");
   }
 
   private ArrayHandlerIntResponse arrayHandlerIntResponse(ArrayHandler arrayHandler) {

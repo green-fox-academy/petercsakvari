@@ -49,13 +49,13 @@ public class MainController {
 
   @PostMapping("/dountil/{what}")
   @ResponseBody
-  public Object doUntil(@PathVariable(name = "what") String s, @RequestBody Until until) {
+  public Object doUntil(@PathVariable(name = "what") String s, @RequestBody(required = false) Until until) {
     return mainService.doUntilResponse(s, until);
   }
 
   @PostMapping("/arrays")
   @ResponseBody
-  public Object arrayHandler(@RequestBody ArrayHandler arrayHandler) {
+  public Object arrayHandler(@RequestBody(required = false) ArrayHandler arrayHandler) {
     return mainService.arrayHandlerResponse(arrayHandler);
   }
 }
