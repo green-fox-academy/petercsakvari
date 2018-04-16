@@ -1,6 +1,7 @@
 package com.greenfoxacademy.rest.services;
 
 import com.greenfoxacademy.rest.models.DoubleResponse;
+import com.greenfoxacademy.rest.models.GreeterResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,5 +17,9 @@ public class MainServiceImpl {
 
   public DoubleResponse doubleInput(Integer input) {
     return new DoubleResponse(input);
+  }
+
+  public GreeterResponse greeterResponse(String name, String title) {
+    return new GreeterResponse(name, title);
   }
 }

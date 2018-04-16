@@ -5,6 +5,7 @@ import com.greenfoxacademy.rest.services.MainServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -36,10 +37,10 @@ public class MainController {
 
   @GetMapping("/greeting")
   @ResponseBody
-  public Object greeting(@RequestParam(name = "name") String input,
-                         @RequestParam(name = "title") String title) {
+  public Object greeting(@RequestParam(name = "name", required = false) String input,
+                         @RequestParam(name = "title", required = false) String title) {
     if (input != null && title != null) {
-      return "{\"welcome_message\": \"Oh, hi there " + input + ", my dear " + title + "!\"}";
+      return mainService.greeterResponse(input, title);
     } else {
       return "{\"error\": \"Please provide a name!\"}";
     }
