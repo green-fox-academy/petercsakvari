@@ -1,7 +1,6 @@
 package com.greenfoxacademy.rest.controllers;
 
 import com.greenfoxacademy.rest.models.ArrayHandler;
-import com.greenfoxacademy.rest.models.ErrorMessage;
 import com.greenfoxacademy.rest.models.Until;
 import com.greenfoxacademy.rest.services.MainServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
