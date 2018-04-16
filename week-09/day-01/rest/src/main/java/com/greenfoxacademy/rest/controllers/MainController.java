@@ -64,6 +64,11 @@ public class MainController {
   @PostMapping("/arrays")
   @ResponseBody
   public Object arrayHandler(@RequestBody ArrayHandler arrayHandler) {
-    return mainService.arrayHandlerResponse(arrayHandler);
+    String what = arrayHandler.getWhat();
+    if (what.equals("sum") || what.equals("multiply")) {
+      return mainService.arrayHandlerIntResponse(arrayHandler);
+    } else {
+      return mainService.arrayHandlerArrayResponse(arrayHandler);
+    }
   }
 }
