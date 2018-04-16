@@ -45,4 +45,10 @@ public class MainController {
       return "{\"error\": \"Please provide a name!\"}";
     }
   }
+
+  @GetMapping("/appenda/{appendable}")
+  @ResponseBody
+  public Object appendA(@PathVariable(name = "appendable") String s) {
+    return mainService.appendWithA(s);
+  }
 }

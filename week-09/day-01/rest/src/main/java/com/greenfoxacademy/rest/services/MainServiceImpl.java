@@ -1,5 +1,6 @@
 package com.greenfoxacademy.rest.services;
 
+import com.greenfoxacademy.rest.models.AppendAResponse;
 import com.greenfoxacademy.rest.models.DoubleResponse;
 import com.greenfoxacademy.rest.models.GreeterResponse;
 import org.springframework.stereotype.Service;
@@ -21,5 +22,9 @@ public class MainServiceImpl {
 
   public GreeterResponse greeterResponse(String name, String title) {
     return new GreeterResponse(name, title);
+  }
+
+  public AppendAResponse appendWithA(String s) {
+    return new AppendAResponse(s);
   }
 }
