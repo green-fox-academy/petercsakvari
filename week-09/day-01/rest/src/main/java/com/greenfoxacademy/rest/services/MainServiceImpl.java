@@ -8,16 +8,21 @@ import java.util.Arrays;
 @Service
 public class MainServiceImpl {
 
-  public Integer parseInt(String s) {
+  public Object doublingResponse(String input) {
+    Integer number = parseInt(input);
+    if (number != null) {
+      return new DoubleResponse(number);
+    } else {
+      return new ErrorMessage("Please provide an input!");
+    }
+  }
+
+  private Integer parseInt(String s) {
     try {
       return Integer.parseInt(s);
     } catch (NumberFormatException e) {
       return null;
     }
-  }
-
-  public DoubleResponse doubleInput(Integer input) {
-    return new DoubleResponse(input);
   }
 
   public Object greetingResponse(String name, String title) {

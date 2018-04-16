@@ -26,12 +26,7 @@ public class MainController {
   @GetMapping("/doubling")
   @ResponseBody
   public Object doubling(@RequestParam(name = "input") String input) {
-    Integer number = mainService.parseInt(input);
-    if (number != null) {
-      return mainService.doubleInput(number);
-    } else {
-      return new ErrorMessage("Please provide an input!");
-    }
+    return mainService.doublingResponse(input);
   }
 
   @GetMapping("/greeting")
