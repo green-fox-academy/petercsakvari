@@ -1,7 +1,16 @@
 package com.greenfoxacademy.restv2.models;
 
-public class ErrorMessage extends Exception {
-  public ErrorMessage(String message) {
-    super(message);
+public class ErrorMessage {
+  private String error;
+
+  public ErrorMessage() {
+  }
+
+  public ErrorMessage(String error) {
+    this.error = error;
+  }
+
+  public String getError() {
+    return error;
   }
 }
