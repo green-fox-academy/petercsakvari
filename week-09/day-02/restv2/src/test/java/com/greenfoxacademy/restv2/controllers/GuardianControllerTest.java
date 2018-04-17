@@ -26,9 +26,6 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @WebAppConfiguration
 @EnableWebMvc
 public class GuardianControllerTest {
-  private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(),
-          MediaType.APPLICATION_JSON.getSubtype(),
-          Charset.forName("utf8"));
 
   private MockMvc mockMvc;
 
@@ -38,10 +35,6 @@ public class GuardianControllerTest {
   @Before
   public void setup() throws Exception {
     this.mockMvc = webAppContextSetup(webApplicationContext).build();
-  }
-
-  @Test
-  public void contextLoads() throws Exception {
   }
 
   @Test
