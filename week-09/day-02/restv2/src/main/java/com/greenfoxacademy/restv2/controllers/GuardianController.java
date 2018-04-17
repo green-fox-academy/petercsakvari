@@ -4,6 +4,7 @@ import com.greenfoxacademy.restv2.services.GuardianService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,5 +32,16 @@ public class GuardianController {
   public Object yondusArrow(@RequestParam(name = "distance") double distance,
                             @RequestParam(name = "time") double time) {
     return guardianService.yondusArrowResponse(distance, time);
+  }
+
+  @GetMapping("/rocket")
+  public Object listCargo() {
+    return guardianService.rorasCargoListResponse();
+  }
+
+  @GetMapping("/rocket/fill")
+  public Object cargoStatus(@RequestParam(name = "caliber") double caliber,
+                            @RequestParam(name = "amount") int amount) {
+    return guardianService.rorasCargoStatusResponse(caliber, amount);
   }
 }
