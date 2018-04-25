@@ -9,3 +9,14 @@ C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoA
 C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.AssemblyInfo.cs
 C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.dll
 C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.pdb
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.deps.json
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.runtimeconfig.json
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.runtimeconfig.dev.json
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.dll
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.pdb
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.csprojResolveAssemblyReference.cache
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.csproj.CoreCompileInputs.cache
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.AssemblyInfoInputs.cache
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.AssemblyInfo.cs
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.dll
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.pdb

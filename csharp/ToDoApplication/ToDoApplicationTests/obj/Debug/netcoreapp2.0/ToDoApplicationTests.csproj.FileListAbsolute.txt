@@ -1,0 +1,17 @@
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\ToDoApplicationTests.deps.json
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\ToDoApplicationTests.runtimeconfig.json
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\ToDoApplicationTests.runtimeconfig.dev.json
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\ToDoApplicationTests.dll
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\ToDoApplicationTests.pdb
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\ToDoApplication.dll
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\bin\Debug\netcoreapp2.0\ToDoApplication.pdb
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\obj\Debug\netcoreapp2.0\ToDoApplicationTests.csprojResolveAssemblyReference.cache
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\obj\Debug\netcoreapp2.0\ToDoApplicationTests.csproj.CoreCompileInputs.cache
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\obj\Debug\netcoreapp2.0\ToDoApplicationTests.AssemblyInfoInputs.cache
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\obj\Debug\netcoreapp2.0\ToDoApplicationTests.AssemblyInfo.cs
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\obj\Debug\netcoreapp2.0\ToDoApplicationTests.csproj.CopyComplete
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\obj\Debug\netcoreapp2.0\ToDoApplicationTests.dll
+C:\GreenFox\greenfox\petercsakvari\csharp\ToDoApplication\ToDoApplicationTests\obj\Debug\netcoreapp2.0\ToDoApplicationTests.pdb

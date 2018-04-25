@@ -10,7 +10,7 @@ namespace ToDoApplication.Services
     public class TodoService : ITodoService
     {
 
-        private ITodoRepository todoRepository;
+        private readonly ITodoRepository todoRepository;
 
         public TodoService(ITodoRepository todoRepository)
         {
