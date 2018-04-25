@@ -29,7 +29,10 @@ namespace ToDoApplication.Services
 
         public void EditById(Todo todo)
         {
-            if (todo != null)
+            if (todo == null)
+            {
+                throw new Exception();
+            } else
             {
                 todoRepository.UpdateTodo(todo);
             }

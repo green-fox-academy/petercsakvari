@@ -2465,11 +2465,11 @@
           "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Microsoft.NET.Test.Sdk/15.6.0": {
+      "Microsoft.NET.Test.Sdk/15.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeCoverage": "1.0.3",
-          "Microsoft.TestPlatform.TestHost": "15.6.0"
+          "Microsoft.TestPlatform.TestHost": "15.7.0"
         },
         "build": {
           "build/netcoreapp1.0/Microsoft.Net.Test.Sdk.props": {},
@@ -2695,7 +2695,7 @@
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
         }
       },
-      "Microsoft.TestPlatform.ObjectModel/15.6.0": {
+      "Microsoft.TestPlatform.ObjectModel/15.7.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.0",
@@ -2804,11 +2804,11 @@
           }
         }
       },
-      "Microsoft.TestPlatform.TestHost/15.6.0": {
+      "Microsoft.TestPlatform.TestHost/15.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyModel": "1.0.3",
-          "Microsoft.TestPlatform.ObjectModel": "15.6.0",
+          "Microsoft.TestPlatform.ObjectModel": "15.7.0",
           "Newtonsoft.Json": "9.0.1"
         },
         "compile": {
@@ -5569,8 +5569,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.2",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
-          "Moq": "4.8.2"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3"
         },
         "compile": {
           "bin/placeholder/ToDoApplication.dll": {}
@@ -7827,10 +7826,10 @@
         "microsoft.net.http.headers.nuspec"
       ]
     },
-    "Microsoft.NET.Test.Sdk/15.6.0": {
-      "sha512": "T6ssUqDEGRW9hS9p2v+Z0lBhcGWDddXgONrAwyWZE4lES3KVwQy2o7esUdYJgs7z3cqGKm+YDedVHth2ns4eOA==",
+    "Microsoft.NET.Test.Sdk/15.7.0": {
+      "sha512": "1oc0SxLGsNDRzzYpMEKkRbb07IQGAZTHgiz0QY1XzwpPLX+GpGj6oZoeqqYe0+9kKy7B0CxtfV4OWipNG0ytng==",
       "type": "package",
-      "path": "microsoft.net.test.sdk/15.6.0",
+      "path": "microsoft.net.test.sdk/15.7.0",
       "files": [
         "build/net45/Microsoft.Net.Test.Sdk.props",
         "build/net45/Microsoft.Net.Test.Sdk.targets",
@@ -7838,7 +7837,7 @@
         "build/netcoreapp1.0/Microsoft.Net.Test.Sdk.targets",
         "build/uap10.0/Microsoft.Net.Test.Sdk.props",
         "buildMultiTargeting/Microsoft.Net.Test.Sdk.props",
-        "microsoft.net.test.sdk.15.6.0.nupkg.sha512",
+        "microsoft.net.test.sdk.15.7.0.nupkg.sha512",
         "microsoft.net.test.sdk.nuspec"
       ]
     },
@@ -8214,10 +8213,10 @@
         "microsoft.rest.clientruntime.azure.nuspec"
       ]
     },
-    "Microsoft.TestPlatform.ObjectModel/15.6.0": {
-      "sha512": "p9Ln24HvUASoyS03rpGJqj1JXfMosQXJuT+rt4vxktFjegVK6AAcLQLyk9aUB/SetaiB9KB/V/6YRz8tlxqeGQ==",
+    "Microsoft.TestPlatform.ObjectModel/15.7.0": {
+      "sha512": "K6jnxdv/WR3h0HbdkqTVCq27Vpt0ac+jv5AXU17XKVLETB1aW8EfuMY2kXFTKHGz512IbBZEtXulf4mtAFBkkw==",
       "type": "package",
-      "path": "microsoft.testplatform.objectmodel/15.6.0",
+      "path": "microsoft.testplatform.objectmodel/15.7.0",
       "files": [
         "lib/net451/Microsoft.TestPlatform.CoreUtilities.dll",
         "lib/net451/Microsoft.TestPlatform.PlatformAbstractions.dll",
@@ -8280,14 +8279,14 @@
         "lib/netstandard1.5/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
         "lib/netstandard1.5/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll",
         "lib/netstandard1.5/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-        "microsoft.testplatform.objectmodel.15.6.0.nupkg.sha512",
+        "microsoft.testplatform.objectmodel.15.7.0.nupkg.sha512",
         "microsoft.testplatform.objectmodel.nuspec"
       ]
     },
-    "Microsoft.TestPlatform.TestHost/15.6.0": {
-      "sha512": "a72dAct/33fnunyHP2H29MUr/RkqyOXq5KjKLfXlwyAeGmSTo79H4LDanOJ+EZImF/JEYx/FL4SDph080X+4tQ==",
+    "Microsoft.TestPlatform.TestHost/15.7.0": {
+      "sha512": "fXlYkUe81TqUMGyy9TReA2fBq57PQLFyQ16AfXymPFdFtifMa1zZaNFQZgniQ/AxwsJHNHvOJxp2DkEvKUNvWg==",
       "type": "package",
-      "path": "microsoft.testplatform.testhost/15.6.0",
+      "path": "microsoft.testplatform.testhost/15.7.0",
       "files": [
         "ThirdPartyNotices.txt",
         "build/uap10.0/Microsoft.TestPlatform.TestHost.props",
@@ -8424,7 +8423,7 @@
         "lib/uap10.0/Microsoft.TestPlatform.Utilities.dll",
         "lib/uap10.0/Microsoft.VisualStudio.TestPlatform.Common.dll",
         "lib/uap10.0/testhost.dll",
-        "microsoft.testplatform.testhost.15.6.0.nupkg.sha512",
+        "microsoft.testplatform.testhost.15.7.0.nupkg.sha512",
         "microsoft.testplatform.testhost.nuspec"
       ]
     },
@@ -14319,33 +14318,34 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NET.Test.Sdk >= 15.6.0",
+      "Microsoft.NET.Test.Sdk >= 15.7.0",
       "Microsoft.NETCore.App >= 2.0.0",
+      "Moq >= 4.8.2",
       "ToDoApplication >= 1.0.0",
       "xunit >= 2.3.1",
       "xunit.runner.visualstudio >= 2.3.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\peter\\.nuget\\packages\\": {},
+    "C:\\Users\\Péter\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GreenFox\\greenfox\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplicationTests\\ToDoApplicationTests.csproj",
+      "projectUniqueName": "D:\\Work\\SoftwareDev\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplicationTests\\ToDoApplicationTests.csproj",
       "projectName": "ToDoApplicationTests",
-      "projectPath": "C:\\GreenFox\\greenfox\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplicationTests\\ToDoApplicationTests.csproj",
-      "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-      "outputPath": "C:\\GreenFox\\greenfox\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplicationTests\\obj\\",
+      "projectPath": "D:\\Work\\SoftwareDev\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplicationTests\\ToDoApplicationTests.csproj",
+      "packagesPath": "C:\\Users\\Péter\\.nuget\\packages\\",
+      "outputPath": "D:\\Work\\SoftwareDev\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplicationTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Péter\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -14359,8 +14359,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\GreenFox\\greenfox\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplication\\ToDoApplication.csproj": {
-              "projectPath": "C:\\GreenFox\\greenfox\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplication\\ToDoApplication.csproj"
+            "D:\\Work\\SoftwareDev\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplication\\ToDoApplication.csproj": {
+              "projectPath": "D:\\Work\\SoftwareDev\\petercsakvari\\csharp\\ToDoApplication\\ToDoApplication\\ToDoApplication.csproj"
             }
           }
         }
@@ -14376,12 +14376,16 @@
         "dependencies": {
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
-            "version": "[15.6.0, )"
+            "version": "[15.7.0, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "Moq": {
+            "target": "Package",
+            "version": "[4.8.2, )"
           },
           "xunit": {
             "target": "Package",
