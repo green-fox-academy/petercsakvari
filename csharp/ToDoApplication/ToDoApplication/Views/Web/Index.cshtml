@@ -1,0 +1,36 @@
+﻿@model List<ToDoApplication.models.Todo>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Todo Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <a href="/add">Add New Todo</a>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Content</th>
+                    <th>Done</th>
+                    <th>Urgent</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var todo in @Model)
+                {
+                    <tr>
+                        <td>@todo.Id</td>
+                        <td>@todo.Content</td>
+                        <td>@todo.IsDone</td>
+                        <td>@todo.IsUrgent</td>
+                        <td><a href="/edit/@todo.Id">Edit</a></td>
+                        <td><a href="/delete/@todo.Id">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

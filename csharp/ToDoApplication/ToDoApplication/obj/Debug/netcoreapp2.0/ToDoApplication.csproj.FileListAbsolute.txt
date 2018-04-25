@@ -1,0 +1,11 @@
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.deps.json
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.runtimeconfig.json
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.runtimeconfig.dev.json
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.dll
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\bin\Debug\netcoreapp2.0\ToDoApplication.pdb
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.csprojResolveAssemblyReference.cache
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.csproj.CoreCompileInputs.cache
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.AssemblyInfoInputs.cache
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.AssemblyInfo.cs
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.dll
+C:\GreenFox\csharp\ToDoApplication\ToDoApplication\obj\Debug\netcoreapp2.0\ToDoApplication.pdb
