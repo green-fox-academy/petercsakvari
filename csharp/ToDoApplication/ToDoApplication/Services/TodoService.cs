@@ -24,7 +24,14 @@ namespace ToDoApplication.Services
 
         public void AddNewTodo(Todo todo)
         {
-            todoRepository.Create(todo);
+            if (todo == null)
+            {
+                throw new Exception();
+            }
+            else
+            {
+                todoRepository.Create(todo);
+            }
         }
 
         public void EditById(Todo todo)
@@ -32,7 +39,8 @@ namespace ToDoApplication.Services
             if (todo == null)
             {
                 throw new Exception();
-            } else
+            }
+            else
             {
                 todoRepository.UpdateTodo(todo);
             }
@@ -41,10 +49,7 @@ namespace ToDoApplication.Services
         public void DeleteById(long id)
         {
             var todo = GetTodoById(id);
-            if (todo != null)
-            {
-                todoRepository.Delete(todo);
-            }
+            todoRepository.Delete(todo);
         }
 
         public Todo GetTodoById(long id)

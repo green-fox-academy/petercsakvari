@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 using Moq;
 using ToDoApplication.Repositories;
@@ -10,35 +11,105 @@ namespace ToDoApplicationTests
 {
     public class TodoServiceTest
     {
-        [Fact]
-        public void EditByIdTest()
+
+        private readonly Mock<ITodoRepository> _mockTodoRepository = new Mock<ITodoRepository>(MockBehavior.Strict);
+
+
+        //FACTORIES
+        private Todo CreateTodo(string s)
         {
-            var mockTodoRepository = new Mock<ITodoRepository>(MockBehavior.Strict);
-            mockTodoRepository.Setup(r => r.UpdateTodo(null)).Throws(new Exception());
-            mockTodoRepository.Setup(t => t.UpdateTodo(It.IsAny<Todo>()));
-            var todoService = new TodoService(mockTodoRepository.Object);
+            return new Todo(s);
+        }
 
-            todoService.EditById(new Todo());
+        private List<Todo> CreateTodos(int num)
+        {
+            List<Todo> todos = new List<Todo>();
+            for (int i = 0; i < num; i++)
+            {
+                todos.Add(new Todo());
+            }
+            return todos;
+        }
 
-            Assert.Throws<Exception>(() => todoService.EditById(null));
-            mockTodoRepository.Verify(r => r.UpdateTodo(It.IsAny<Todo>()), Times.Once);
+        //TESTS
+        [Fact]
+        public void GetAllTodosTest()
+        {
+            var expected = CreateTodos(10);
+            _mockTodoRepository.Setup(t => t.Read()).Returns(expected);
+            var todoService = new TodoService(_mockTodoRepository.Object);
+
+            var actual = todoService.GetAllTodos();
+
+            _mockTodoRepository.Verify(r => r.Read(), Times.Once);
+            Assert.Equal(expected, actual);
         }
 
         [Fact]
-        public void GetTodoByIdTest()
+        public void AddNewTodoPostiveTest()
         {
-            var mockTodoRepository = new Mock<ITodoRepository>();
-            var expected = new Todo("test");
-            mockTodoRepository.Setup(r => r.FindById(0)).Returns(expected);
-            var todoService = new TodoService(mockTodoRepository.Object);
+            _mockTodoRepository.Setup(t => t.Create(It.IsAny<Todo>()));
+            var todoService = new TodoService(_mockTodoRepository.Object);
 
-            var result = todoService.GetTodoById(0);
+            todoService.AddNewTodo(CreateTodo("test"));
 
-            var expectedStr = JsonConvert.SerializeObject(expected);
-            var resultStr = JsonConvert.SerializeObject(result);
+            _mockTodoRepository.Verify(r => r.Create(It.IsAny<Todo>()), Times.Once);
+        }
 
-            mockTodoRepository.Verify(x => x.FindById(It.IsAny<long>()), Times.Once());
-            Assert.Equal(expected, result);
+        [Fact]
+        public void AddNewTodoNegativeTest()
+        {
+            _mockTodoRepository.Setup(t => t.Create(It.IsAny<Todo>()));
+            var todoService = new TodoService(_mockTodoRepository.Object);
+
+            Assert.Throws<Exception>(() => todoService.AddNewTodo(null));
+        }
+
+        [Fact]
+        public void EditByIdTest()
+        {
+            _mockTodoRepository.Setup(t => t.UpdateTodo(It.IsAny<Todo>()));
+            var todoService = new TodoService(_mockTodoRepository.Object);
+
+            todoService.EditById(new Todo());
+
+            _mockTodoRepository.Verify(r => r.UpdateTodo(It.IsAny<Todo>()), Times.Once);
+        }
+
+        [Fact]
+        public void EditByIdNegativeTest()
+        {
+            _mockTodoRepository.Setup(t => t.UpdateTodo(It.IsAny<Todo>()));
+            var todoService = new TodoService(_mockTodoRepository.Object);
+
+            Assert.Throws<Exception>(() => todoService.EditById(null));
+        }
+
+        [Fact]
+        public void DeleteByIdPositiveTest()
+        {
+            var todo = CreateTodo("test");
+            _mockTodoRepository.Setup(t => t.Delete(It.IsAny<Todo>()));
+            _mockTodoRepository.Setup(r => r.FindById(It.IsAny<long>())).Returns(todo);
+            var todoService = new TodoService(_mockTodoRepository.Object);
+
+            todoService.DeleteById(0);
+
+            _mockTodoRepository.Verify(r => r.Delete(It.IsAny<Todo>()), Times.Once);
+        }
+
+        [Fact]
+        public void GetTodoByIdPositiveTest()
+        {
+            var expected = CreateTodo("test");
+
+            _mockTodoRepository.Setup(r => r.FindById(It.IsAny<long>())).Returns(expected);
+            var todoService = new TodoService(_mockTodoRepository.Object);
+
+            var actual = todoService.GetTodoById(1);
+
+            _mockTodoRepository.Verify(x => x.FindById(It.IsAny<long>()), Times.Once());
+            Assert.Equal(JsonConvert.SerializeObject(expected), JsonConvert.SerializeObject(actual));
         }
     }
 }
