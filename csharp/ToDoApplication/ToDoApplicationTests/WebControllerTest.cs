@@ -9,6 +9,7 @@ using ToDoApplication.Controllers;
 using ToDoApplication.models;
 using ToDoApplication.Services;
 using Xunit;
+using Newtonsoft.Json;
 
 namespace ToDoApplicationTests
 {
@@ -34,10 +35,10 @@ namespace ToDoApplicationTests
 
         //TESTS
         [Fact]
-        public void IndexReturnsAViewResultWithAListOfTodos()
+        public void Index_ReturnsAViewResult_WithAListOfTodos_CallsServiceMethod()
         {
             var expected = CreateTodos(10);
-            mockTodoService.Setup(s => s.GetAllTodos()).Returns(expected);
+            mockTodoService.Setup(s => s.GetAllTodos()).Returns(expected).Verifiable();
             var controller = new WebController(mockTodoService.Object);
 
             var result = controller.Index();
@@ -45,10 +46,11 @@ namespace ToDoApplicationTests
             var viewResult = Assert.IsType<ViewResult>(result);
             var model = Assert.IsAssignableFrom<IEnumerable<Todo>>(viewResult.ViewData.Model);
             Assert.Equal(10, model.Count());
+            mockTodoService.Verify();
         }
 
         [Fact]
-        public void AddFormReturnsAViewResult()
+        public void AddForm_ReturnsAViewResult()
         {
             var controller = new WebController(mockTodoService.Object);
 
@@ -58,14 +60,56 @@ namespace ToDoApplicationTests
         }
 
         [Fact]
-        public void AddNewTodoPostRetursARedirect()
+        public void AddNewTodoPost_ReturnsARedirect_CallsServiceMethod()
         {
             mockTodoService.Setup(s => s.AddNewTodo(It.IsAny<Todo>())).Verifiable();
             var controller = new WebController(mockTodoService.Object);
 
             var result = controller.AddNewTodo(CreateTodo("test"));
 
-            Assert.IsType<RedirectToActionResult>(result);
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Index", redirectToActionResult.ActionName);
+            mockTodoService.Verify();
+        }
+
+        [Fact]
+        public void DeleteTodo_ReturnsARedirect_CallsServiceMethod()
+        {
+            mockTodoService.Setup(s => s.DeleteById(It.IsAny<long>())).Verifiable();
+            var controller = new WebController(mockTodoService.Object);
+
+            var result = controller.DeleteTodo(0);
+
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Index", redirectToActionResult.ActionName);
+            mockTodoService.Verify();
+        }
+
+        [Fact]
+        public void EditForm_ResturnsAViewResult_WithATodo_CallsServiceMethod()
+        {
+            var expected = CreateTodo("test");
+            mockTodoService.Setup(s => s.GetTodoById(It.IsAny<long>())).Returns(expected).Verifiable();
+            var controller = new WebController(mockTodoService.Object);
+
+            var result = controller.EditForm(0);
+
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var model = Assert.IsAssignableFrom<Todo>(viewResult.ViewData.Model);
+            Assert.Equal(JsonConvert.SerializeObject(expected), JsonConvert.SerializeObject(model));
+            mockTodoService.Verify();
+        }
+
+        [Fact]
+        public void EditTodo_ReturnsARedirectToAction_CallsServiceMethod()
+        {
+            mockTodoService.Setup(s => s.EditById(It.IsAny<Todo>())).Verifiable();
+            var controller = new WebController(mockTodoService.Object);
+
+            var result = controller.EditTodo(0, CreateTodo("test"));
+
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Index", redirectToActionResult.ActionName);
             mockTodoService.Verify();
         }
     }

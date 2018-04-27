@@ -43,7 +43,7 @@ namespace ToDoApplication.Controllers
         public IActionResult DeleteTodo(long id)
         {
             todoService.DeleteById(id);
-            return Redirect("/");
+            return RedirectToAction(actionName: nameof(Index));
         }
 
         [HttpGet("/edit/{id}")]
@@ -57,7 +57,7 @@ namespace ToDoApplication.Controllers
         public IActionResult EditTodo(long id, Todo todo)
         {
             todoService.EditById(todo);
-            return Redirect("/");
+            return RedirectToAction(actionName: nameof(Index));
         }
     }
 }
