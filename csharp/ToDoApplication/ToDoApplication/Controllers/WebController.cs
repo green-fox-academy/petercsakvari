@@ -36,7 +36,7 @@ namespace ToDoApplication.Controllers
         public IActionResult AddNewTodo(Todo todo)
         {
             todoService.AddNewTodo(todo);
-            return Redirect("/");
+            return RedirectToAction(actionName: nameof(Index));
         }
 
         [HttpGet("/delete/{id}")]
