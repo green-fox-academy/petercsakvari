@@ -9,11 +9,15 @@ using Newtonsoft.Json;
 
 namespace ToDoApplicationTests
 {
-    public class TodoServiceTest
+    public class TodoServiceTest : IClassFixture<RepoFixture>
     {
 
-        private readonly Mock<ITodoRepository> mockTodoRepository = new Mock<ITodoRepository>(MockBehavior.Strict);
+        RepoFixture fixture;
 
+        public TodoServiceTest(RepoFixture fixture)
+        {
+            this.fixture = fixture;
+        }
 
         //FACTORIES
         private Todo CreateTodo(string s)
@@ -36,31 +40,31 @@ namespace ToDoApplicationTests
         public void GetAllTodosTest()
         {
             var expected = CreateTodos(10);
-            mockTodoRepository.Setup(t => t.Read()).Returns(expected);
-            var todoService = new TodoService(mockTodoRepository.Object);
+            fixture.MockRepo.Setup(t => t.Read()).Returns(expected);
+            var todoService = new TodoService(fixture.MockRepo.Object);
 
             var actual = todoService.GetAllTodos();
 
-            mockTodoRepository.Verify(r => r.Read(), Times.Once);
+            fixture.MockRepo.Verify(r => r.Read(), Times.Once);
             Assert.Equal(expected, actual);
         }
 
         [Fact]
         public void AddNewTodoPostiveTest()
         {
-            mockTodoRepository.Setup(t => t.Create(It.IsAny<Todo>()));
-            var todoService = new TodoService(mockTodoRepository.Object);
+            fixture.MockRepo.Setup(t => t.Create(It.IsAny<Todo>()));
+            var todoService = new TodoService(fixture.MockRepo.Object);
 
             todoService.AddNewTodo(CreateTodo("test"));
 
-            mockTodoRepository.Verify(r => r.Create(It.IsAny<Todo>()), Times.Once);
+            fixture.MockRepo.Verify(r => r.Create(It.IsAny<Todo>()), Times.Once);
         }
 
         [Fact]
         public void AddNewTodoNegativeTest()
         {
-            mockTodoRepository.Setup(t => t.Create(It.IsAny<Todo>()));
-            var todoService = new TodoService(mockTodoRepository.Object);
+            fixture.MockRepo.Setup(t => t.Create(It.IsAny<Todo>()));
+            var todoService = new TodoService(fixture.MockRepo.Object);
 
             Assert.Throws<Exception>(() => todoService.AddNewTodo(null));
         }
@@ -68,19 +72,19 @@ namespace ToDoApplicationTests
         [Fact]
         public void EditByIdTest()
         {
-            mockTodoRepository.Setup(t => t.UpdateTodo(It.IsAny<Todo>()));
-            var todoService = new TodoService(mockTodoRepository.Object);
+            fixture.MockRepo.Setup(t => t.UpdateTodo(It.IsAny<Todo>()));
+            var todoService = new TodoService(fixture.MockRepo.Object);
 
             todoService.EditById(new Todo());
 
-            mockTodoRepository.Verify(r => r.UpdateTodo(It.IsAny<Todo>()), Times.Once);
+            fixture.MockRepo.Verify(r => r.UpdateTodo(It.IsAny<Todo>()), Times.Once);
         }
 
         [Fact]
         public void EditByIdNegativeTest()
         {
-            mockTodoRepository.Setup(t => t.UpdateTodo(It.IsAny<Todo>()));
-            var todoService = new TodoService(mockTodoRepository.Object);
+            fixture.MockRepo.Setup(t => t.UpdateTodo(It.IsAny<Todo>()));
+            var todoService = new TodoService(fixture.MockRepo.Object);
 
             Assert.Throws<Exception>(() => todoService.EditById(null));
         }
@@ -89,13 +93,13 @@ namespace ToDoApplicationTests
         public void DeleteByIdPositiveTest()
         {
             var todo = CreateTodo("test");
-            mockTodoRepository.Setup(t => t.Delete(It.IsAny<Todo>()));
-            mockTodoRepository.Setup(r => r.FindById(It.IsAny<long>())).Returns(todo);
-            var todoService = new TodoService(mockTodoRepository.Object);
+            fixture.MockRepo.Setup(t => t.Delete(It.IsAny<Todo>()));
+            fixture.MockRepo.Setup(r => r.FindById(It.IsAny<long>())).Returns(todo);
+            var todoService = new TodoService(fixture.MockRepo.Object);
 
             todoService.DeleteById(0);
 
-            mockTodoRepository.Verify(r => r.Delete(It.IsAny<Todo>()), Times.Once);
+            fixture.MockRepo.Verify(r => r.Delete(It.IsAny<Todo>()), Times.Once);
         }
 
         [Fact]
@@ -103,12 +107,12 @@ namespace ToDoApplicationTests
         {
             var expected = CreateTodo("test");
 
-            mockTodoRepository.Setup(r => r.FindById(It.IsAny<long>())).Returns(expected);
-            var todoService = new TodoService(mockTodoRepository.Object);
+            fixture.MockRepo.Setup(r => r.FindById(It.IsAny<long>())).Returns(expected);
+            var todoService = new TodoService(fixture.MockRepo.Object);
 
             var actual = todoService.GetTodoById(1);
 
-            mockTodoRepository.Verify(x => x.FindById(It.IsAny<long>()), Times.Once());
+            fixture.MockRepo.Verify(x => x.FindById(It.IsAny<long>()), Times.AtLeastOnce);
             Assert.Equal(JsonConvert.SerializeObject(expected), JsonConvert.SerializeObject(actual));
         }
     }
